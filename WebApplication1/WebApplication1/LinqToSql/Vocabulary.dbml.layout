@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Vocabulary">
+  <DataContextMoniker Name="/VocabularyDataContext" />
+  <nestedChildShapes>
+    <classShape Id="e9947c39-8508-4c8c-a739-189191ae5068" absoluteBounds="4.75, 2.875, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/VocabularyDataContext/Topic" />
+      <nestedChildShapes>
+        <elementListCompartment Id="151d2f58-cdb0-442e-82cd-acbf927cdb20" absoluteBounds="4.7650000000000006, 3.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d72c485d-fb15-4fb2-adc4-5022a03761a9" absoluteBounds="4, 0.625, 2, 1.3862939453125">
+      <DataClassMoniker Name="/VocabularyDataContext/Word" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a259db32-6dd5-4d20-a436-df9a254d8b89" absoluteBounds="4.0150000000000006, 1.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="dbbc0796-f96d-4f7a-bba8-2a43f42d7b15" absoluteBounds="1.125, 3, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/VocabularyDataContext/Translate" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4ddd432e-f28f-46a6-95bb-01b6e7fb7ea0" absoluteBounds="1.1400000000000001, 3.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.375 : 2.875); (5.375 : 2.0112939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/VocabularyDataContext/Topic/Topic_Word" />
+      <nodes>
+        <classShapeMoniker Id="e9947c39-8508-4c8c-a739-189191ae5068" />
+        <classShapeMoniker Id="d72c485d-fb15-4fb2-adc4-5022a03761a9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4 : 1.31814697265625); (2.125 : 1.31814697265625); (2.125 : 3)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/VocabularyDataContext/Word/Word_Translate" />
+      <nodes>
+        <classShapeMoniker Id="d72c485d-fb15-4fb2-adc4-5022a03761a9" />
+        <classShapeMoniker Id="dbbc0796-f96d-4f7a-bba8-2a43f42d7b15" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
