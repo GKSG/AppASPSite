@@ -33,7 +33,14 @@ namespace EasyUKRaine.Controls
 
             string path = RouteTable.Routes.GetVirtualPath(null, null, new RouteValueDictionary() { { "category", category }, { "page", "1" } }).VirtualPath;
 
-            return string.Format("<a href='{0}' {1}>{2}</a>", path, category == selectedCategory ? "class='selected'" : "", category);
+           // string result = string.Format("<a href='{0}' {1}>{2}</a>", path, category == selectedCategory ? "class='selected'" : "", category);
+            if (category == "Test")
+            {
+                path = RouteTable.Routes.GetVirtualPath(null, "firstTest", null).VirtualPath;
+
+            }
+
+            return  string.Format("<a href='{0}' {1}>{2}</a>", path, category == selectedCategory ? "class='selected'" : "", category);
         }
     }
 }

@@ -91,6 +91,7 @@
     </Content>
     <Content Include="packages.config" />
     <Content Include="Pages\AccountLogin.aspx" />
+    <Content Include="Pages\FirstTest.aspx" />
     <Content Include="Pages\MainForm.aspx" />
     <Content Include="Pages\MainWindow.Master" />
     <EntityDeploy Include="Models\EF_connection.edmx">
@@ -175,6 +176,13 @@
     </Compile>
     <Compile Include="Pages\AccountLogin.aspx.designer.cs">
       <DependentUpon>AccountLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\FirstTest.aspx.cs">
+      <DependentUpon>FirstTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\FirstTest.aspx.designer.cs">
+      <DependentUpon>FirstTest.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\MainForm.aspx.cs">
       <DependentUpon>MainForm.aspx</DependentUpon>
