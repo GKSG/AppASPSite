@@ -1,0 +1,26 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MainWindow.master.cs" Inherits="EasyUKRaine.Pages.MainWindow" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>EasyUKRaine</title>
+        <link rel="stylesheet" href="/Content/Style.css" />
+
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="header">
+            <SS:Autorization runat="server" />
+            <div class="title">EasyUKRaine</div>
+        </div>
+        <div id="categories">
+            <SS:Links runat="server" />
+        </div>
+        <div>
+            <asp:ContentPlaceHolder ID="bodyContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
