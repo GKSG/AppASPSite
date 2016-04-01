@@ -59,9 +59,11 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="StyleCSS\StyleSheet1.css" />
     <Content Include="Tags.aspx" />
+    <Content Include="Taskes\TaskPage Image.aspx" />
+    <Content Include="Taskes\TaskPage.aspx" />
     <Content Include="Vocabulary.aspx" />
+    <Content Include="StyleCSS\StyleSheet1.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -70,14 +72,27 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Vocabulary.dbml</DependentUpon>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repo\Repository.cs" />
     <Compile Include="Tags.aspx.cs">
       <DependentUpon>Tags.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Tags.aspx.designer.cs">
       <DependentUpon>Tags.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Taskes\ITask.cs" />
+    <Compile Include="Taskes\TaskPage Image.aspx.cs">
+      <DependentUpon>TaskPage Image.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Taskes\TaskPage Image.aspx.designer.cs">
+      <DependentUpon>TaskPage Image.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Taskes\TaskPage.aspx.cs">
+      <DependentUpon>TaskPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Taskes\TaskPage.aspx.designer.cs">
+      <DependentUpon>TaskPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vocabulary.aspx.cs">
       <DependentUpon>Vocabulary.aspx</DependentUpon>
@@ -86,6 +101,8 @@
     <Compile Include="Vocabulary.aspx.designer.cs">
       <DependentUpon>Vocabulary.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repo\Repository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="LinqToSql\Vocabulary.dbml">
