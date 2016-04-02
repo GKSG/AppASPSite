@@ -8,7 +8,7 @@ using WebApplication1.Repo;
 
 namespace WebApplication1.Taskes
 {
-    public partial class TaskPage : System.Web.UI.Page
+    public partial class STaskPage : System.Web.UI.Page
     {
         private static bool next = true;
         private static KeyValuePair<int, int> index;

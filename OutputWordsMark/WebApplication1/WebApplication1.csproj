@@ -60,8 +60,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Tags.aspx" />
-    <Content Include="Taskes\TaskPage Image.aspx" />
-    <Content Include="Taskes\TaskPage.aspx" />
+    <Content Include="Taskes\Anagram\ATaskPageHard.aspx" />
+    <Content Include="Taskes\Anagram\ATaskPage.aspx" />
+    <Content Include="Taskes\Anagram\ATaskPage Image.aspx" />
+    <Content Include="Taskes\Single\STaskPage Image.aspx" />
+    <Content Include="Taskes\Single\STaskPage.aspx" />
     <Content Include="Vocabulary.aspx" />
     <Content Include="StyleCSS\StyleSheet1.css" />
     <Content Include="Web.config" />
@@ -79,20 +82,43 @@
     <Compile Include="Tags.aspx.designer.cs">
       <DependentUpon>Tags.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Taskes\Anagram\Anagram.cs" />
+    <Compile Include="Taskes\Anagram\ATaskPageHard.aspx.cs">
+      <DependentUpon>ATaskPageHard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Taskes\Anagram\ATaskPageHard.aspx.designer.cs">
+      <DependentUpon>ATaskPageHard.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Taskes\ITask.cs" />
-    <Compile Include="Taskes\TaskPage Image.aspx.cs">
-      <DependentUpon>TaskPage Image.aspx</DependentUpon>
+    <Compile Include="Taskes\Single\Single.cs" />
+    <Compile Include="Taskes\Anagram\ATaskPage.aspx.cs">
+      <DependentUpon>ATaskPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Taskes\TaskPage Image.aspx.designer.cs">
-      <DependentUpon>TaskPage Image.aspx</DependentUpon>
+    <Compile Include="Taskes\Anagram\ATaskPage.aspx.designer.cs">
+      <DependentUpon>ATaskPage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Taskes\TaskPage.aspx.cs">
-      <DependentUpon>TaskPage.aspx</DependentUpon>
+    <Compile Include="Taskes\Anagram\ATaskPage Image.aspx.cs">
+      <DependentUpon>ATaskPage Image.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Taskes\TaskPage.aspx.designer.cs">
-      <DependentUpon>TaskPage.aspx</DependentUpon>
+    <Compile Include="Taskes\Anagram\ATaskPage Image.aspx.designer.cs">
+      <DependentUpon>ATaskPage Image.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Taskes\Single\STaskPage Image.aspx.cs">
+      <DependentUpon>STaskPage Image.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Taskes\Single\STaskPage Image.aspx.designer.cs">
+      <DependentUpon>STaskPage Image.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Taskes\Single\STaskPage.aspx.cs">
+      <DependentUpon>STaskPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Taskes\Single\STaskPage.aspx.designer.cs">
+      <DependentUpon>STaskPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vocabulary.aspx.cs">
       <DependentUpon>Vocabulary.aspx</DependentUpon>

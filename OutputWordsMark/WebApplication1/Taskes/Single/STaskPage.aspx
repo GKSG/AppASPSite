@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="TaskPage Image.aspx.cs" Inherits="WebApplication1.Taskes.TaskPageImage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="STaskPage.aspx.cs" Inherits="WebApplication1.Taskes.STaskPage" %>
 
 <!DOCTYPE html>
 

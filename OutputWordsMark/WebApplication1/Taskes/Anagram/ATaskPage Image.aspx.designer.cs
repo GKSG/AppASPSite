@@ -10,7 +10,7 @@
 namespace WebApplication1.Taskes {
     
     
-    public partial class TaskPage {
+    public partial class ATaskPageImage {
         
         /// <summary>
         /// form1 элемент управления.

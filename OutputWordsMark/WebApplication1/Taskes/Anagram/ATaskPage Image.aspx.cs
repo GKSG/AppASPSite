@@ -8,7 +8,7 @@ using WebApplication1.Repo;
 
 namespace WebApplication1.Taskes
 {
-    public partial class TaskPageImage : System.Web.UI.Page
+    public partial class ATaskPageImage : System.Web.UI.Page
     {
         private static bool next = true;
         private static KeyValuePair<int, int> index;
@@ -23,37 +23,40 @@ namespace WebApplication1.Taskes
         }
 
         protected void MainPanel_Load(object sender, EventArgs e)
-        {     
-            
+        {                  
                 randTag = new Random((int) DateTime.Now.Ticks);
                 randWord = new Random((int) DateTime.Now.Ticks);
                 int t = randTag.Next(repo.topics.Count);
                 int w = randWord.Next(repo.topics[t].words.Count);
                 index = new KeyValuePair<int, int>(t, w);
             if (next)
-                task = new SingleImage
+                task = new AnagramImage
                 {
                     CorrectWord = repo.topics[index.Key].words[index.Value].word,
                     Content = repo.topics[index.Key].words[index.Value].translates[0].image
                 };
-                
-                Label header = new Label();
+            ((AnagramTask) task).CreateAnagram();
+            Label header = new Label();
                 header.Font.Name = "Helvetica";
                 header.Font.Size = 26;
                 Label sense = new Label();
                 sense.Font.Name = "Helvetica";
                 sense.Font.Size = 26;
-                //----пофіксити багатозначність
-                
-                Image content = new Image();
+            Label comb = new Label();
+            comb.Font.Name = "Helvetica";
+            comb.Font.Size = 40;
+            //----пофіксити багатозначність
+
+            Image content = new Image();
                 
 
                 header.Text = task.Header + "<br />";
                 sense.Text = "<br />" + task.Sence + "<br />";
-                content.BorderColor = System.Drawing.Color.Black;
-                content.ImageUrl = (((SingleImage) task).Content as Image).ImageUrl;
-
-                content.ImageAlign = ImageAlign.Middle; 
+            comb.Text = (new string(((AnagramTask) task).AnagramWord.Select(x => x.Value).ToArray())) + "<br />";
+            content.BorderColor = System.Drawing.Color.Black;
+                content.ImageUrl = (((AnagramImage) task).Content as Image).ImageUrl;
+            
+            content.ImageAlign = ImageAlign.Middle; 
                 content.CssClass = "PicWordAuto1";
             content.Width = 512;
             content.Height = 512;
@@ -63,16 +66,17 @@ namespace WebApplication1.Taskes
                 MainPanel.Controls.Add(header);
                 MainPanel.Controls.Add(sense);
                 MainPanel.Controls.Add(new TableCell {Controls= {content}});
+            MainPanel.Controls.Add(comb);
 
 
-                next = false;
+            next = false;
             
         }
 
 
         protected void Unnamed_Click(object sender, EventArgs e)
         {
-            if (((SingleTask) task).CorrectWord.Replace('\"','\'') == InputWord.Text.Trim(' '))
+            if (((AnagramTask) task).CorrectWord.Replace('\"','\'') == InputWord.Text.Trim(' '))
             {
                 next = true;           
                 ClientScript.RegisterClientScriptBlock(this.GetType(), "calling",
