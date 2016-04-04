@@ -40,6 +40,12 @@ namespace EasyUKRaine.Controls
 
             }
 
+            if (category == "Games")
+            {
+                path = RouteTable.Routes.GetVirtualPath(null, "Games", null).VirtualPath;
+
+            }
+
             return  string.Format("<a href='{0}' {1}>{2}</a>", path, category == selectedCategory ? "class='selected'" : "", category);
         }
     }

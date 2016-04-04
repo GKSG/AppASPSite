@@ -17,7 +17,12 @@
 </span><br>
     <button name="action" value="login" type="submit">Log In</button>
     &nbsp; -->
-    <a id="regLink" runat="server">Registration</a>
+           <br />
+           <br />
+           <br />
+           <br />
+           <br />
+           <a id="regLink" runat="server">Registration</a>
         <a id="singInLink" runat="server">SingIn</a>
 </div>
     <div id="yesAutor" runat="server"><strong>User:&nbsp;&nbsp;&nbsp;

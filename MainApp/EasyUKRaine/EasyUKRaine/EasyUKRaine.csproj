@@ -85,9 +85,20 @@
     </Content>
     <Content Include="Content\main.css" />
     <Content Include="Content\Style.css" />
+    <Content Include="Content\StyleSheet1.css" />
     <Content Include="Content\theme.min.css" />
     <Content Include="Controls\Autorization.ascx" />
     <Content Include="Controls\MenuControl.ascx" />
+    <Content Include="Pages\Tags.aspx" />
+    <Content Include="kuchmynda\Taskes\Anagram\ATaskHard.aspx" />
+    <Content Include="kuchmynda\Taskes\Anagram\ATaskPage Image.aspx" />
+    <Content Include="kuchmynda\Taskes\Anagram\ATaskPage.aspx" />
+    <Content Include="kuchmynda\Taskes\Matches\MTaskPage Image.aspx" />
+    <Content Include="kuchmynda\Taskes\Matches\MTaskPage.aspx" />
+    <Content Include="kuchmynda\Taskes\Matches\MTaskPageHard.aspx" />
+    <Content Include="kuchmynda\Taskes\Single\STaskPage Image.aspx" />
+    <Content Include="kuchmynda\Taskes\Single\STaskPage.aspx" />
+    <Content Include="Pages\Vocabulary.aspx" />
     <Content Include="Models\EF_connection.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>EF_connection.edmx</DependentUpon>
@@ -142,6 +153,80 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Tags.aspx.cs">
+      <DependentUpon>Tags.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Tags.aspx.designer.cs">
+      <DependentUpon>Tags.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="kuchmynda\Taskes\Anagram\Anagram.cs" />
+    <Compile Include="kuchmynda\Taskes\Anagram\ATaskHard.aspx.cs">
+      <DependentUpon>ATaskHard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="kuchmynda\Taskes\Anagram\ATaskHard.aspx.designer.cs">
+      <DependentUpon>ATaskHard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="kuchmynda\Taskes\Anagram\ATaskPage Image.aspx.cs">
+      <DependentUpon>ATaskPage Image.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="kuchmynda\Taskes\Anagram\ATaskPage Image.aspx.designer.cs">
+      <DependentUpon>ATaskPage Image.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="kuchmynda\Taskes\Anagram\ATaskPage.aspx.cs">
+      <DependentUpon>ATaskPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="kuchmynda\Taskes\Anagram\ATaskPage.aspx.designer.cs">
+      <DependentUpon>ATaskPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="kuchmynda\Taskes\ITask.cs" />
+    <Compile Include="kuchmynda\Taskes\Matches\Matches.cs" />
+    <Compile Include="kuchmynda\Taskes\Matches\MTaskPage Image.aspx.cs">
+      <DependentUpon>MTaskPage Image.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="kuchmynda\Taskes\Matches\MTaskPage Image.aspx.designer.cs">
+      <DependentUpon>MTaskPage Image.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="kuchmynda\Taskes\Matches\MTaskPage.aspx.cs">
+      <DependentUpon>MTaskPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="kuchmynda\Taskes\Matches\MTaskPage.aspx.designer.cs">
+      <DependentUpon>MTaskPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="kuchmynda\Taskes\Matches\MTaskPageHard.aspx.cs">
+      <DependentUpon>MTaskPageHard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="kuchmynda\Taskes\Matches\MTaskPageHard.aspx.designer.cs">
+      <DependentUpon>MTaskPageHard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="kuchmynda\Taskes\Single\Single.cs" />
+    <Compile Include="kuchmynda\Taskes\Single\STaskPage Image.aspx.cs">
+      <DependentUpon>STaskPage Image.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="kuchmynda\Taskes\Single\STaskPage Image.aspx.designer.cs">
+      <DependentUpon>STaskPage Image.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="kuchmynda\Taskes\Single\STaskPage.aspx.cs">
+      <DependentUpon>STaskPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="kuchmynda\Taskes\Single\STaskPage.aspx.designer.cs">
+      <DependentUpon>STaskPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Vocabulary.aspx.cs">
+      <DependentUpon>Vocabulary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Vocabulary.aspx.designer.cs">
+      <DependentUpon>Vocabulary.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\EF_connection.Context.cs">
       <AutoGen>True</AutoGen>
@@ -233,6 +318,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="kuchmynda\StyleCSS\" />
     <Folder Include="Scripts\" />
   </ItemGroup>
   <ItemGroup>

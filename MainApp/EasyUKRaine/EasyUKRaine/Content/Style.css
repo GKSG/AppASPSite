@@ -55,9 +55,9 @@ background-color: #353535; border: 1px solid black;
 
 
 
-DIV#autrConrtol { float:right; margin: .8em; color: Silver;
-background-color: #df691a; padding: .3em .3em .3em 3em; }
-DIV#autrConrtol A { text-decoration: none; padding: .2em 1em .2em 1em; line-height:1.5em;
+DIV#autrConrtol { float:right; margin: .4em; color: White;
+background-color: #df691a; padding: .1em .3em .3em 3em; }
+DIV#autrConrtol A { text-decoration: none; padding: .1em 1em .1em 1em; line-height:1.5em;
 margin-left: .1em; background-color: #df691a; color:White;}
 
 .checkout label { display: inline-block; width: 50px; text-align: right;}
