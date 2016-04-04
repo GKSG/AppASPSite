@@ -51,7 +51,7 @@ namespace EasyUKRaine.Models.Repository
 
         private List<string> _categoryList = new List<string>()
         {
-            "Grammar", "Test", "Games", "About"
+            "Grammar", "Vocabulary", "Test", "Games", "About"
         };
 
         public List<string> GetCategoryList

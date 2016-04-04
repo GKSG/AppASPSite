@@ -19,6 +19,7 @@ namespace EasyUKRaine.App_Start
             routes.MapPageRoute("registration", "registration", "~/Pages/Registration.aspx");
             routes.MapPageRoute("account", "account", "~/Pages/Account_Login.aspx");
             routes.MapPageRoute("firstTest", "firstTest", "~/Pages/FirstTest.aspx");
+            routes.MapPageRoute("SingIn", "SingIn", "~/Pages/SingIn.aspx");
             //routes.MapPageRoute("checkout", "checkout", "~/Pages/Checkout.aspx");
 
             //routes.MapPageRoute("admin_orders", "admin/orders", "~/Pages/Admin/Orders.aspx");

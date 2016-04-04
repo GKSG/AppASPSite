@@ -1,0 +1,35 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+
+
+.jumbotron {
+	min-height: 600px;
+}
+
+.nav li {
+	display: block;
+	width: 100%;
+}
+
+.nav li a {
+	display: block;
+	transition: all ease 0.35s;
+}
+
+.nav li a:hover {
+	background-color: #2980b9;
+}
+
+
+
+
+
+
+
+
+
+

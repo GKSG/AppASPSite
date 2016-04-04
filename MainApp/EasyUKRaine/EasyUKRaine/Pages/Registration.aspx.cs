@@ -33,7 +33,7 @@ namespace EasyUKRaine.Pages
             userInfo.Location = city.Value;
             userInfo.E_mail = email.Value;
             userInfo.DateOfBirth = Convert.ToDateTime("1995.10.12");
-            userInfo.DateOfReg = Convert.ToDateTime("2016.03.22");
+            userInfo.DateOfReg = DateTime.Today;
 
 
             
