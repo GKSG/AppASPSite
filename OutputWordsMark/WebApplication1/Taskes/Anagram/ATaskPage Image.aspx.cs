@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using WebApplication1.Repo;
+using WebApplication1.Taskes.Anagram;
 
 namespace WebApplication1.Taskes
 {

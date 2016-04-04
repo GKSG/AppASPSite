@@ -6,7 +6,7 @@ using System.Web.UI.WebControls;
 
 namespace WebApplication1.Taskes
 {
-    enum LevelUA
+    public enum LevelUA
     {
         Beginner,Intermediate,Pro
     }

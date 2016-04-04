@@ -60,9 +60,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Tags.aspx" />
-    <Content Include="Taskes\Anagram\ATaskPageHard.aspx" />
+    <Content Include="Taskes\Matches\MTaskPageHard.aspx" />
     <Content Include="Taskes\Anagram\ATaskPage.aspx" />
     <Content Include="Taskes\Anagram\ATaskPage Image.aspx" />
+    <Content Include="Taskes\Matches\MTaskPage Image.aspx" />
+    <Content Include="Taskes\Matches\MTaskPage.aspx" />
     <Content Include="Taskes\Single\STaskPage Image.aspx" />
     <Content Include="Taskes\Single\STaskPage.aspx" />
     <Content Include="Vocabulary.aspx" />
@@ -83,14 +85,29 @@
       <DependentUpon>Tags.aspx</DependentUpon>
     </Compile>
     <Compile Include="Taskes\Anagram\Anagram.cs" />
-    <Compile Include="Taskes\Anagram\ATaskPageHard.aspx.cs">
-      <DependentUpon>ATaskPageHard.aspx</DependentUpon>
+    <Compile Include="Taskes\Matches\MTaskPageHard.aspx.cs">
+      <DependentUpon>MTaskPageHard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Taskes\Anagram\ATaskPageHard.aspx.designer.cs">
-      <DependentUpon>ATaskPageHard.aspx</DependentUpon>
+    <Compile Include="Taskes\Matches\MTaskPageHard.aspx.designer.cs">
+      <DependentUpon>MTaskPageHard.aspx</DependentUpon>
     </Compile>
     <Compile Include="Taskes\ITask.cs" />
+    <Compile Include="Taskes\Matches\MTaskPage Image.aspx.cs">
+      <DependentUpon>MTaskPage Image.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Taskes\Matches\MTaskPage Image.aspx.designer.cs">
+      <DependentUpon>MTaskPage Image.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Taskes\Matches\MTaskPage.aspx.cs">
+      <DependentUpon>MTaskPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Taskes\Matches\MTaskPage.aspx.designer.cs">
+      <DependentUpon>MTaskPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Taskes\Matches\Matches.cs" />
     <Compile Include="Taskes\Single\Single.cs" />
     <Compile Include="Taskes\Anagram\ATaskPage.aspx.cs">
       <DependentUpon>ATaskPage.aspx</DependentUpon>

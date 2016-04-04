@@ -10,7 +10,7 @@
 namespace WebApplication1.Taskes {
     
     
-    public partial class ATaskPageHard {
+    public partial class MTaskPage {
         
         /// <summary>
         /// form1 элемент управления.
@@ -29,14 +29,5 @@ namespace WebApplication1.Taskes {
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel MainPanel;
-        
-        /// <summary>
-        /// InputWord элемент управления.
-        /// </summary>
-        /// <remarks>
-        /// Автоматически создаваемое поле.
-        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox InputWord;
     }
 }
