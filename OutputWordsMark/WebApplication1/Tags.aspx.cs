@@ -61,7 +61,7 @@ namespace WebApplication1
                     VerticalAlign = VerticalAlign.Middle
                 };
                 var la=new Label {Text = item.Key };
-                la.Font.Name = "Cambria Math";
+                la.Font.Name = "Helvetica";
                 la.Font.Size = 24;
                 c2.Controls.Add(la);
                 row2.Controls.Add(c2);
@@ -74,6 +74,7 @@ namespace WebApplication1
                     Tages.Rows.Add(row);
                 }
             }
+            
         }
     }
 }

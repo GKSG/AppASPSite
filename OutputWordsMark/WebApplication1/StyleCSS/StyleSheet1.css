@@ -9,7 +9,8 @@
 .PicWordAuto1 {
     max-height: 512px;
     max-width:512px;
-   
+    min-height: 512px;
+    min-width:512px;
     width: auto;
     height: auto;
 }
