@@ -22,6 +22,15 @@ namespace EasyUKRaine.Pages {
         protected global::System.Web.UI.HtmlControls.HtmlInputText login;
         
         /// <summary>
+        /// email control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl email;
+        
+        /// <summary>
         /// password control.
         /// </summary>
         /// <remarks>
@@ -31,13 +40,13 @@ namespace EasyUKRaine.Pages {
         protected global::System.Web.UI.HtmlControls.HtmlInputPassword password;
         
         /// <summary>
-        /// email control.
+        /// password_confirm control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText email;
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword password_confirm;
         
         /// <summary>
         /// fname control.
@@ -74,15 +83,6 @@ namespace EasyUKRaine.Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText city;
-        
-        /// <summary>
-        /// Calendar1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar Calendar1;
         
         /// <summary>
         /// Button1 control.

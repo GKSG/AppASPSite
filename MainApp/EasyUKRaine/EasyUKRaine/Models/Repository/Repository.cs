@@ -51,13 +51,33 @@ namespace EasyUKRaine.Models.Repository
 
         private List<string> _categoryList = new List<string>()
         {
-            "Grammar", "Test", "Games", "About"
+            "Grammar", "Vocabulary", "Test", "Games", "About"
         };
 
         public List<string> GetCategoryList
         {
             get { return _categoryList;}
         }
+
+        private List<FTquestion> _FTlist = new List<FTquestion>()
+        {
+            new FTquestion() {ID= 1, quizz = "How would you write \"a very nice friend\"?", answer = "дуже хороший друг", AnswerList = {"зелене дерево", "висотна будівля", "дуже старий чоловік","дуже хороший друг"}},
+            new FTquestion() {ID= 2, quizz = "Which one of the following means \"square\":", answer = "квадратний", AnswerList = { "круглий", "квадратний", "трикутний", "солодкий", "глибокий"}},
+            new FTquestion() {ID= 3, quizz = "Which one of the following means \"red\":", answer = "червоний", AnswerList = { "червоний", "білий", "синій", "жовтий", "чорний"}},
+            new FTquestion() {ID= 4, quizz = "Which one of the following means \"today\":", answer = "сьогодні", AnswerList = { "сьогодні", "негайно", "вчора", "завтра", "вже"}},
+            new FTquestion() {ID= 5, quizz = "How would you write \"quickly\"?", answer = "швидко", AnswerList = { "повільно", "швидко", "майже", "разом", "насправді"}},
+            new FTquestion() {ID= 6, quizz = "Which one of the following means the number \"six\"?", answer = "шість", AnswerList = { "три", "дев'ять", "сім", "тринадцять", "шість"}},
+            new FTquestion() {ID= 7, quizz = "How would you write \"green car\"?", answer = "зелений автомобіль", AnswerList = { "гараж", "мій автомобіль", "три автомобіля", "зелений автомобіль", "ззовні автомобіля"}},
+            new FTquestion() {ID= 8, quizz = "What's \"nose\" in Ukrainian?", answer = "ніс", AnswerList = { "плече", "шия", "серце", "ніс", "вухо"}},
+            new FTquestion() {ID= 9, quizz = "How would you write \"we speak\"?", answer = "Ми говоримо", AnswerList = { "Вона говорить", "Ви говорите", "Я говорю", "Ми говоримо", "Він говорить"}},
+            new FTquestion() {ID= 10, quizz = "How would you write \"his chickens\"?", answer = "його кури", AnswerList = { "вона американка", "його кури", "він щасливий", "ваша донька", "її кури"}},
+        };
+
+        public List<FTquestion> GetFTquestions
+        {
+            get { return _FTlist; }
+        } 
+
 
 
 
@@ -96,6 +116,8 @@ namespace EasyUKRaine.Models.Repository
                 Context.Database.ExecuteSqlCommand(query);
             }
         }
+
+        public List<int> HelpWithFT_list { get; set; } = new List<int>();
 
     }
 }

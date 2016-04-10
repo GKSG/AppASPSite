@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="EasyUKRainianModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="EasyUKRainianModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -32,7 +32,7 @@ warning 6002: The table/view 'EasyUKRainian.dbo.Translate' does not have a prima
         <EntityType Name="Translate">
           <Key>
             <PropertyRef Name="TID" />
-            <PropertyRef Name="WID" />
+            
           </Key>
           <Property Name="TID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="WID" Type="int" Nullable="false" />
@@ -57,7 +57,7 @@ warning 6002: The table/view 'EasyUKRainian.dbo.UserHistory' does not have a pri
         <EntityType Name="UserHistory">
           <Key>
             <PropertyRef Name="HID" />
-            <PropertyRef Name="UsID" />
+            
           </Key>
           <Property Name="HID" Type="int" Nullable="false" />
           <Property Name="UsID" Type="int" Nullable="false" />
@@ -71,7 +71,7 @@ warning 6002: The table/view 'EasyUKRainian.dbo.UserInfo' does not have a primar
         <EntityType Name="UserInfo">
           <Key>
             <PropertyRef Name="InfoID" />
-            <PropertyRef Name="UsID" />
+            
           </Key>
           <Property Name="InfoID" Type="int" Nullable="false" />
           <Property Name="UsID" Type="int" Nullable="false" />
@@ -88,7 +88,7 @@ warning 6002: The table/view 'EasyUKRainian.dbo.Word' does not have a primary ke
         <EntityType Name="Word">
           <Key>
             <PropertyRef Name="WID" />
-            <PropertyRef Name="TopicID" />
+            
           </Key>
           <Property Name="WID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TopicID" Type="int" Nullable="false" />
@@ -154,8 +154,7 @@ warning 6002: The table/view 'EasyUKRainian.dbo.Word' does not have a primary ke
     FROM [dbo].[Word] AS [Word]</DefiningQuery>
           </EntitySet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="EasyUKRainianModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -182,7 +181,6 @@ warning 6002: The table/view 'EasyUKRainian.dbo.Word' does not have a primary ke
         <EntityType Name="Translate">
           <Key>
             <PropertyRef Name="TID" />
-            <PropertyRef Name="WID" />
           </Key>
           <Property Name="TID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="WID" Type="Int32" Nullable="false" />
@@ -203,7 +201,6 @@ warning 6002: The table/view 'EasyUKRainian.dbo.Word' does not have a primary ke
         <EntityType Name="UserHistory">
           <Key>
             <PropertyRef Name="HID" />
-            <PropertyRef Name="UsID" />
           </Key>
           <Property Name="HID" Type="Int32" Nullable="false" />
           <Property Name="UsID" Type="Int32" Nullable="false" />
@@ -215,7 +212,6 @@ warning 6002: The table/view 'EasyUKRainian.dbo.Word' does not have a primary ke
         <EntityType Name="UserInfo">
           <Key>
             <PropertyRef Name="InfoID" />
-            <PropertyRef Name="UsID" />
           </Key>
           <Property Name="InfoID" Type="Int32" Nullable="false" />
           <Property Name="UsID" Type="Int32" Nullable="false" />
@@ -230,7 +226,6 @@ warning 6002: The table/view 'EasyUKRainian.dbo.Word' does not have a primary ke
         <EntityType Name="Word">
           <Key>
             <PropertyRef Name="WID" />
-            <PropertyRef Name="TopicID" />
           </Key>
           <Property Name="WID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TopicID" Type="Int32" Nullable="false" />

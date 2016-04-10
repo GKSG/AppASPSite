@@ -20,9 +20,9 @@ namespace EasyUKRaine.Models.Repo
                     c =>
                         new TopicR
                         {
-                            header = c.Header.Trim(' ').Replace(" ", " & "),
+                            header = c.Header,
                             capacity = c.Capacity,
-                            image = new ImageButton {ImageUrl = c.Image, Width = 256, Height = 256},
+                            image = new ImageButton {ImageUrl = c.Image},
                             words =
                                 DBData.Word.Where(w => w.TopicID == c.TopicID)
                                     .Select(
