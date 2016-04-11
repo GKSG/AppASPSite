@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="bodyContent"  runat="server">
     <center>
-            <asp:Table ID="Tages" BackColor="#cccc1e" BorderStyle="Ridge" runat="server" OnLoad="Tages_Load" GridLines="Both" />
+            <asp:Table ID="Tages" BackColor="Transparent" BorderStyle="Ridge" runat="server" OnLoad="Tages_Load" GridLines="Both" />
     </center>
 
     
