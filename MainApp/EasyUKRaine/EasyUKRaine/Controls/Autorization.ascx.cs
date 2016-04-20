@@ -17,20 +17,25 @@ namespace EasyUKRaine.Controls
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
 
             if (IsPostBack)
             {
+                regLink.HRef = RouteTable.Routes.GetVirtualPath(null, "registration", null).VirtualPath;
+                singInLink.HRef = RouteTable.Routes.GetVirtualPath(null, "SingIn", null).VirtualPath;
 
                 string user = Request["user"];
                 string pass = Request["pass"];
                 string action = Request["action"];
+                string sign_out = Request["logout"];
                 if (Repository.GetInstance().CurrentUser == null)
                 {
                     Repository.GetInstance().CurrentUser =
                         Repository.GetInstance()
                             .UsersAccounts.FirstOrDefault(x => x.UserName == user && x.UserPassword == pass);
                 }
+
+               // Refresh();
                 if (action == "login" && Repository.GetInstance().CurrentUser != null)
                 {
 
@@ -42,7 +47,7 @@ namespace EasyUKRaine.Controls
                     Label_Score.Text = Repository.GetInstance().CurrentUser.Score.ToString();
 
                 }
-                else
+                else if (sign_out == "Sing Out")
                 {
                     FormsAuthentication.SignOut();
                     noAutor.Visible = true;
@@ -97,6 +102,11 @@ namespace EasyUKRaine.Controls
         protected string GetUser()
         {
             return Context.User.Identity.Name;
+        }
+
+        protected void singOutSub_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

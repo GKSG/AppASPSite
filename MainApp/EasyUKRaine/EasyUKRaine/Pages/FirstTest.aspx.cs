@@ -35,64 +35,74 @@ namespace EasyUKRaine.Pages
                         }
                         case 2:
                         {
-                                HelpSwitch(1);
-                                break;
+                            HelpSwitch(1);
+                            break;
                         }
                         case 3:
-                            {
-                                HelpSwitch(2);
-                                break;
-                            }
+                        {
+                            HelpSwitch(2);
+                            break;
+                        }
                         case 4:
-                            {
-                                HelpSwitch(3);
-                                break;
-                            }
+                        {
+                            HelpSwitch(3);
+                            break;
+                        }
                         case 5:
-                            {
-                                HelpSwitch(4);
-                                break;
-                            }
+                        {
+                            HelpSwitch(4);
+                            break;
+                        }
                         case 6:
-                            {
-                                HelpSwitch(5);
-                                break;
-                            }
+                        {
+                            HelpSwitch(5);
+                            break;
+                        }
                         case 7:
-                            {
-                                HelpSwitch(6);
-                                break;
-                            }
+                        {
+                            HelpSwitch(6);
+                            break;
+                        }
                         case 8:
-                            {
-                                HelpSwitch(7);
-                                break;
-                            }
+                        {
+                            HelpSwitch(7);
+                            break;
+                        }
                         case 9:
-                            {
-                                HelpSwitch(8);
-                                break;
-                            }
+                        {
+                            HelpSwitch(8);
+                            break;
+                        }
                         case 10:
-                            {
-                                HelpSwitch(9);
-                                break;
-                            }
+                        {
+                            HelpSwitch(9);
+                            break;
+                        }
                         default:
                             break;
                     }
 
                     Response.Redirect(
-    RouteTable.Routes.GetVirtualPath(null, null, new RouteValueDictionary() { { "page", ++i } })
-        .VirtualPath);
+                        RouteTable.Routes.GetVirtualPath(null, null, new RouteValueDictionary() {{"page", ++i}})
+                            .VirtualPath);
                 }
 
                 string go_out = Request.Form["go_out"];
                 if (go_out == "go")
                 {
-                    Response.Redirect(RouteTable.Routes.GetVirtualPath(null, null).VirtualPath);
-                }
 
+                    Repository.GetInstance().CurrentUser.Level = Repository.GetInstance().CurrentUser.Score / 100;
+                    Repository.GetInstance().UpdateUserAccount(Repository.GetInstance().CurrentUser);
+
+
+                    Response.Redirect(RouteTable.Routes.GetVirtualPath(null, null).VirtualPath);
+                    
+                }
+            }
+
+            if (!Page.User.Identity.IsAuthenticated)
+            {
+                Response.Redirect(RouteTable.Routes.GetVirtualPath(null, null).VirtualPath);
             }
         }
 
@@ -104,7 +114,8 @@ namespace EasyUKRaine.Pages
                     Request.Form[Repository.GetInstance().GetFTquestions[i].answer].ToString();
                 if (answer == Repository.GetInstance().GetFTquestions[i].answer)
                 {
-                    Repository.GetInstance().CurrentUser.Score += 5;
+                    Repository.GetInstance().CurrentUser.Score += 100;
+                    
                 }
             }
         }
@@ -146,17 +157,7 @@ namespace EasyUKRaine.Pages
 
         public IEnumerable<FTquestion> GetProducts()
         {
-            //IEnumerable< FTquestion > good_tmp = new List<FTquestion>();
-            //foreach (var l in ShuflleTest())
-            //{
-            //    if (Repository.GetInstance().HelpWithFT_list.Contains(l.ID)) continue;
-            //  //  good_tmp.Add(l);
-            //}
             IEnumerable<FTquestion> tmp = Repository.GetInstance().GetFTquestions.Skip((CurrentPage - 1)).Take(1);
-
-            //Repository.GetInstance().HelpWithFT_list.Add(tmp.FirstOrDefault().ID);
-            // Session["quizz_array"] = Repository.GetInstance().HelpWithFT_list;
-
             return tmp;
         }
 

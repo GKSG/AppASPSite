@@ -2,6 +2,7 @@
 
 
 
+    <ul class="nav nav-tabs">
 
 <%= CreateHomeLinkHtml() %>
 <% 
@@ -10,3 +11,4 @@
     }
 %>
                         
+    </ul>

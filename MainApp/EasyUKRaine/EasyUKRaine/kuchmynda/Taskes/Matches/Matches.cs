@@ -17,6 +17,19 @@ namespace WebApplication1.Taskes.Matches
         public KeyValuePair<int, int>[] PairRight { get; set; } = new KeyValuePair<int, int>[5];
         public string[] ContentLeft { get; set; } = new string[5];
         public object ContentRight { get; set; }
+
+        public object CorrectAnswer
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
     }
 
     public class MatchesWord : MatchesTask

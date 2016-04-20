@@ -34,7 +34,7 @@ namespace WebApplication1.Taskes
             if (next)
                 task = new AnagramWord
                 {
-                    CorrectWord = repo.topics[index.Key].words[index.Value].word.Replace('\"', '\''),
+                    CorrectAnswer = repo.topics[index.Key].words[index.Value].word.Replace('\"', '\''),
                     Content = repo.topics[index.Key].words[index.Value].translates[0].translate
                 };
             ((AnagramTask) task).CreateAnagram();
@@ -72,7 +72,7 @@ namespace WebApplication1.Taskes
         }
 
 
-        protected void Unnamed_Click(object sender, EventArgs e)
+       /* protected void Unnamed_Click(object sender, EventArgs e)
         {
             if (((AnagramTask) task).CorrectWord.Replace('\"','\'') == InputWord.Text.Trim(' '))
             {
@@ -81,6 +81,6 @@ namespace WebApplication1.Taskes
                     $"<script type=\"text/javascript\">alert(\"Чудово! Wery well, bro!\")</script>");      
             }
 
-        }
+        }*/
     }
 }

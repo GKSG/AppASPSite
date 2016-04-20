@@ -78,7 +78,7 @@ namespace EasyUKRaine.kuchmynda
                     Current.Rows.Add(row2);
                     Cell.Controls.Add(Current);
                     row.Controls.Add(Cell);
-                    if ((index + 1) % 2 == 0)
+                    if ((index + 1) % 4 == 0)
                     {
                         Tages.Rows.Add(row);
                     }

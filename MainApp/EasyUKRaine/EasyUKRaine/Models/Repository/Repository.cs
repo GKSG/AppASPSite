@@ -28,6 +28,9 @@ namespace EasyUKRaine.Models.Repository
             return _repositoryIstance;
         }
 
+        public SingIn singIn = new SingIn();
+
+
         private EasyUKRainianEntities context = new EasyUKRainianEntities();
 
         private UserAccount _currentUser = new UserAccount();
@@ -90,7 +93,6 @@ namespace EasyUKRaine.Models.Repository
             userInfo.InfoID = maxid;
             userInfo.UsID = userAccount.UsID;
 
-
             var queryUserAccount = String.Format("Insert into UserAccount (UsId,UserName,UserPassword,Donut,Level,Score) " +
                                       "Values({0}, '{1}', '{2}', '{3}', {4}, {5})",userAccount.UsID,userAccount.UserName,
                                       userAccount.UserPassword,userAccount.Donut,userAccount.Level,userAccount.Score);
@@ -101,12 +103,27 @@ namespace EasyUKRaine.Models.Repository
                                               userInfo.Country,
                                               userInfo.Location, userInfo.E_mail);
 
-
             ExecuteQuery(queryUserAccount);
             ExecuteQuery(queryUserInfo);
+        }
+
+        public void UpdateUserAccount(UserAccount user)
+        {
+            try
+            {
+                var queryUserScore = String.Format("Update UserAccount Set Score = {0}  where UsID = {1}" +
+                                                   "  update UserAccount Set Level = Score where UsID = {1}", user.Score, user.UsID);
 
 
+                ExecuteQuery(queryUserScore);
 
+               // context.SaveChanges();
+                //  ExecuteQuery(queryUserLevel);
+            }
+            catch (Exception ex)
+            {
+                
+            }
         }
 
         private void ExecuteQuery(string query)

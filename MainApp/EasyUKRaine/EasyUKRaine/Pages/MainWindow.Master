@@ -31,13 +31,7 @@
             <asp:ContentPlaceHolder ID="bodyContent" runat="server">
             </asp:ContentPlaceHolder>
         </div>
-        <div >
-        <!-- Example row of columns -->
-        <hr>
-        <footer>
-            <p>&copy; Company 2015</p>
-        </footer>
-    </div>
+
 
     </form>
 </body>

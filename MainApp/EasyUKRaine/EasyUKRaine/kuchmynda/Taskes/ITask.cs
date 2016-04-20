@@ -15,6 +15,7 @@ namespace WebApplication1.Taskes
     {
         string Header { get; set; }
         string Sence { get; set; }
+        object CorrectAnswer { get; set; }
         LevelUA Level { get; set; }
         int PointsOfTask { get; set; }
     }

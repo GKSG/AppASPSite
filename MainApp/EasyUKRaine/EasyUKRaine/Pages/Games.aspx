@@ -8,9 +8,9 @@
 <asp:Table runat="server" Width="744px" Height="273px">
     <asp:TableRow runat="server">
 
-            <asp:TableCell runat="server"><asp:ImageButton runat="server" OnClick="OnClick" ImageUrl="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS5ln_RajPE7gfSKU8CXs0qbc_wdFEopONi4KP5uGleJ5ggc_IZ" ToolTip="Vocabulary"/></asp:TableCell>
+            <asp:TableCell runat="server"><asp:ImageButton runat="server" OnClick="OnClick" src="Content/Image/images.jpg" ToolTip="Vocabulary"/></asp:TableCell>
 
-            <asp:TableCell runat="server"><asp:ImageButton runat="server" OnClick="Action_findWords" ImageUrl="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRDyqZQjCq_2hJxigYI6_AosWwGZFTflmB8MZKTQDb3VwBDonef_A"/></asp:TableCell>
+            <asp:TableCell runat="server"><asp:ImageButton runat="server" OnClick="Action_findWords" src="Content/Image/findWords.jpg"/></asp:TableCell>
     </asp:TableRow>
 </asp:Table>
          </center>

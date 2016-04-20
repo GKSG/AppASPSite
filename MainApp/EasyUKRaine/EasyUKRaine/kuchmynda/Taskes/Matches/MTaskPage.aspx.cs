@@ -70,7 +70,7 @@ namespace WebApplication1.Taskes
         protected void Text(object sender, EventArgs e)
         {
             var control = sender as TextBox;
-            control.Text = new string(new[] {control.Text.First()});
+            control.Text = new string(new[] { control.Text.First() });
         }
 
 

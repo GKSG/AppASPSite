@@ -11,23 +11,25 @@ namespace WebApplication1.Taskes.Anagram
         public string Sence { get; set; }
         public LevelUA Level { get; set; } = LevelUA.Beginner;
         public int PointsOfTask { get; set; } = 100;
-        public string CorrectWord { get; set; }
         public object Content { get; set; }
 
         public char?[] AnagramWord { get; set; } = null;
 
+        public object CorrectAnswer { get; set; } = String.Empty;
+
         public void CreateAnagram()
         {
-            AnagramWord = new char?[CorrectWord.Length];
+            var word=((string)CorrectAnswer);
+            AnagramWord = new char?[word.Length];
             var forbiddenIndexes = new List<int>();
             int iter = 0;
             Random rand = new Random((int)DateTime.Now.Ticks);
             while (!AnagramWord.All(x => x.HasValue))
             {
-                int index = rand.Next(CorrectWord.Length);
+                int index = rand.Next(word.Length);
                 if(!forbiddenIndexes.Contains(index))
                 {          
-                    AnagramWord[iter] = CorrectWord[index];
+                    AnagramWord[iter] = word[index];
                     iter++;
                     forbiddenIndexes.Add(index);
                 }

@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Text;
 using System.Net;
 using EasyUKRaine.Models;
+using System.Web.Routing;
 
 namespace game
 {
@@ -14,66 +15,51 @@ namespace game
     {
         public static bool IsGeneration = true;
         public static List<TableRow> tr = new List<TableRow>();
+        public static List<TableRow> tr1 = new List<TableRow>();
         public static List<string> words = new List<string>();
         public static List<string> symb = new List<string>();
+        public static List<string> translate = new List<string>();
+        public static List<string> english = new List<string>();
         public static List<string> WordsDB = (new EasyUKRainianEntities()).Word.Select(x => x.Word1.Replace("\"","")).ToList();
+        private static EasyUKRainianEntities repo = new EasyUKRainianEntities();
+        public static List<Word> WordsDB1 = repo.Word.ToList();
+        public static List<Translate> TranslDB = repo.Translate.ToList();
+
+        public static List<KeyValuePair<string, string>> WordAndTranslate = new List<KeyValuePair<string, string>>();
         protected void Page_Load(object sender, EventArgs e)
-        {
-            try
-            {
-                if (IsGeneration == true)
+        {               
+           
+            if (IsGeneration == true)
                 {
-                    TableRow t1 = new TableRow();
-                    TableCell tc1 = new TableCell();
-                    tc1.Text = "Words";
-                    TableCell tc2 = new TableCell();
-                    tc2.Text = "Points";
-                    t1.Cells.Add(tc1);
-                    t1.Cells.Add(tc2);
-                    tr.Add(t1);
-                    Table_res.Rows.Add(tr[0]);
-                    for (int i = 0; i < WordsDB.Count; i++)
-                    {
-                        for (int j = 0; j < WordsDB[i].Length; j++)
+                for (int i = 0; i < WordsDB1.Count; i++)
+                    for (int j = 0; j < TranslDB.Count; j++)
+                        if (WordsDB1[i].WID == TranslDB[j].WID)
                         {
-                            if (!symb.Contains(WordsDB[i][j].ToString()) && symb.Count <= 16)
-                            {
-                                symb.Add(WordsDB[i][j].ToString().ToLower());
-                            }
+                            WordAndTranslate.Add(new KeyValuePair<string, string>(WordsDB1[i].Word1, TranslDB[j].Translate1));
+                            continue;
                         }
-                    }
-                    //symb.Add("а");
-                    //symb.Add("б");
-                    //symb.Add("в");
-                    //symb.Add("г");
-                    //symb.Add("д");
-                    //symb.Add("е");
-                    //symb.Add("є"); 
-                    //symb.Add("ж");
-                    //symb.Add("з");
-                    //symb.Add("и");
-                    //symb.Add("і");
-                    //symb.Add("ї");
-                    //symb.Add("й");
-                    //symb.Add("к");            
-                    //symb.Add("л");
-                    //symb.Add("м");
-                    //symb.Add("н");
-                    //symb.Add("о");
-                    //symb.Add("п");
-                    //symb.Add("р");
-                    //symb.Add("с");
-                    //symb.Add("т");
-                    //symb.Add("у");
-                    //symb.Add("ф");
-                    //symb.Add("х");
-                    //symb.Add("ц");
-                    //symb.Add("ч");
-                    //symb.Add("ш");
-                    //symb.Add("щ");
-                    //symb.Add("ь");
-                    //symb.Add("ю");
-                    //symb.Add("я");
+                
+                Random rnd1 = new Random();                   
+                    int m = 0;
+                    for (int i = 0; i < WordAndTranslate.Count; i++)
+                    {
+                        m=rnd1.Next(0, WordAndTranslate.Count);
+                        
+                        for (int j = 0; j < WordAndTranslate[m].Key.Length; j++)
+                        {
+                            
+                            if (!symb.Contains(WordAndTranslate[m].Key[j].ToString()) && symb.Count < 16)
+                            {
+                                symb.Add(WordAndTranslate[m].Key[j].ToString());
+                            if (!translate.Contains(WordAndTranslate[m].Key))
+                            {
+                                translate.Add(WordAndTranslate[m].Key);
+                                english.Add(WordAndTranslate[m].Value);
+                                words.Add("");
+                            }
+                        }                        
+                     }                                     
+                    }              
                     Random rnd = new Random();
                     string[] k = new string[16];
                     for (int i = 0; i < k.Length; i++)
@@ -98,86 +84,113 @@ namespace game
                     b15.Text = k[14].ToString();
                     b16.Text = k[15].ToString();
                     IsGeneration = false;
+                TableRow t1 = new TableRow();
+                TableCell tc1 = new TableCell();
+                tc1.Text = "Words";
+                tc1.BorderWidth = 2;
+                tc1.BorderColor = System.Drawing.Color.Black;
+                TableCell tc2 = new TableCell();
+                tc2.Text = "Translation";
+                tc2.BorderWidth = 2;
+                tc2.BorderColor = System.Drawing.Color.Black;
+                t1.Cells.Add(tc1);
+                t1.Cells.Add(tc2);
+                tr.Add(t1);
+                Table_res.Rows.Add(tr[0]);
+                for (int i = 1; i < translate.Count; i++)
+                {                    
+                    TableRow t11 = new TableRow();
+                    TableCell tc11 = new TableCell();
+                    tc11.BorderWidth = 2;
+                    tc11.BorderColor = System.Drawing.Color.Black;
+                    tc11.Text = english[i-1];
+                    TableCell tc21 = new TableCell();
+                    tc21.Text = "";
+                    tc21.BorderWidth = 2;
+                    tc21.BorderColor = System.Drawing.Color.Black;
+                    t11.Cells.Add(tc11);
+                    t11.Cells.Add(tc21);
+                    tr.Add(t11);
+                    Table_res.Rows.Add(tr[i]);
                 }
-            }
-            catch (Exception ex)
-            {
-                
-            }
+            }          
         }
-        public static int timeLeft = 180;
-        protected void Timer1_Tick(object sender, EventArgs e)
-        {
-            for (int i = 0; i < tr.Count; i++)
-            {
-                Table_res.Rows.Add(tr[i]);
-            }
-            if (timeLeft > 10)
-            {
+        //public static int timeLeft = 180;
+        //protected void Timer1_Tick(object sender, EventArgs e)
+        //{
+        //    for (int i = 0; i < tr.Count; i++)
+        //    {
+        //        Table_res.Rows.Add(tr[i]);
+        //    }
+        //    if (timeLeft > 10)
+        //    {
 
-                timeLeft = timeLeft - 10;
-                timeLabel.Text = timeLeft + " seconds";
-            }
-            else
-            {
-                timeLabel.Text = "Time's up!";
-                int sum = 0;
-                for (int i = 1; i < tr.Count; i++)
-                {
-                    sum += Convert.ToInt32(tr[i].Cells[1].Text.ToString());
-                    //Response.Write("Time is over!!! Your Score" + tr[i].Cells[1].Text.T);
-                }
-                Response.Write("Time is over!!! Your Score" + sum.ToString());
-            }
+        //        timeLeft = timeLeft - 10;
+        //        timeLabel.Text = timeLeft + " seconds";
+        //    }
+        //    else
+        //    {
+        //        timeLabel.Text = "Time's up!";
+        //        int sum = 0;
+        //        for (int i = 1; i < tr.Count; i++)
+        //        {
+        //            sum += Convert.ToInt32(tr[i].Cells[1].Text.ToString());
+        //            //Response.Write("Time is over!!! Your Score" + tr[i].Cells[1].Text.T);
+        //        }
+        //        Response.Write("Time is over!!! Your Score" + sum.ToString());
+        //    }
            
-        }
+        //}
         protected void button_submit_Click(object sender, EventArgs e)
         {
             string find = Text1.Text;
-            string filePath = @"D:\6 семестр\проект\EasyUKRaine\EasyUKRaine\uk_UA.dic";
-            string text = System.IO.File.ReadAllText(filePath);
-            var output = text.Split('/').Select(x=>x=x.Replace("\n","")).ToList();
-            
-            if(output.Contains(find))
-            {
-                if (words.Contains(find))
+            //string filePath = @"C:\Users\q\Desktop\uk_UA.dic";
+            //string text = System.IO.File.ReadAllText(filePath);
+            //var output = text.Split('/').Select(x=>x=x.Replace("\n","")).ToList();
+            Table_res.Rows.Add(tr[0]);
+            for (int y = 0; y < translate.Count; y++)
+            {                
+                if (translate[y] == find)
                 {
-                    for (int i = 0; i < tr.Count; i++)
-                    {
-                        Table_res.Rows.Add(tr[i]);
-                    }
-                }
-                else
-                {
-                    words.Add(find);
-                    TableRow t1 = new TableRow();
-                    TableCell tc1 = new TableCell();
-                    tc1.Text = find;
-                    TableCell tc2 = new TableCell();
-                    tc2.Text = find.Length.ToString();
-                    t1.Cells.Add(tc1);
-                    t1.Cells.Add(tc2);
-                    tr.Add(t1);
-                    for (int i = 0; i < tr.Count; i++)
-                    {
-                        Table_res.Rows.Add(tr[i]);
-                    }
-                }
-                
+                    words[y] = translate[y];
+                }                
             }
-            else
+            for (int i = 1; i < translate.Count; i++)
             {
-                Response.Write("have not this word");
-                for (int i = 0; i < tr.Count; i++)
-                {
-                    Table_res.Rows.Add(tr[i]);
-                }
+                TableRow t11 = new TableRow();
+                TableCell tc11 = new TableCell();
+                tc11.BorderWidth = 2;
+                tc11.BorderColor = System.Drawing.Color.Black;
+                tc11.Text = english[i-1];
+                TableCell tc21 = new TableCell();
+                tc21.Text = words[i-1];
+                tc21.BorderWidth = 2;
+                tc21.BorderColor = System.Drawing.Color.Black;
+                t11.Cells.Add(tc11);
+                t11.Cells.Add(tc21);
+                tr[i]=t11;
+                Table_res.Rows.Add(tr[i]);
             }
             Text1.Text = "";
+            int res=0;
+            for (int i = 0; i < translate.Count; i++)
+            {
+                if (words[i] == translate[i])
+                {
+                    res += 1;
+                }
+                if (res == translate.Count - 1)
+                {
+                    //ClientScript.RegisterOnSubmitStatement(this.GetType(), "calling",
+                    //$"<script type=\"text/javascript\">alert(\"Good job!!!\")</script>");
+                    Response.Redirect(RouteTable.Routes.GetVirtualPath(null, "Games", null).VirtualPath);
+                }
+            }
+               
         }
         protected void b1_Click(object sender, EventArgs e)
         {
-            Text1.Text += b1.Text;
+                Text1.Text += b1.Text;
             for (int i = 0; i < tr.Count; i++)
             {
                 Table_res.Rows.Add(tr[i]);
@@ -306,6 +319,10 @@ namespace game
         protected void button_clear_Click(object sender, EventArgs e)
         {
             Text1.Text = "";
+            for (int i = 0; i < tr.Count; i++)
+            {
+                Table_res.Rows.Add(tr[i]);
+            }
         }
            /* protected void button_clear_Click(object sender, EventArgs e)
              {

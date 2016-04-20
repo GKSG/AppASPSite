@@ -7,16 +7,13 @@
     
     <div id="content">
 
-
-
                 <%
                     try
                     {
-                        Console.WriteLine(ShuflleTest().Count);
+                        
                         foreach (var l in GetProducts())
                         {
-                            
-                           // if (Repository.GetInstance().HelpWithFT_list.Contains(l.ID)) continue;
+                            // if (Repository.GetInstance().HelpWithFT_list.Contains(l.ID)) continue;
                             Response.Write("<div >");
                             Response.Write(string.Format("<h3>{1})  {0}</h3>", l.quizz, l.ID));
 
@@ -28,10 +25,20 @@
                             Response.Write("</div >");
 
                             Repository.GetInstance().HelpWithFT_list.Add(l.ID);
-
                         }
                     }
-                    catch(Exception e) {} %>
+                    catch(Exception e) {}
+
+                    if (CurrentPage < 10)
+
+                        Response.Write(string.Format("<br/><br/><button type='submit' name='{0}'{1}> Next</button>", "pathNext", "class='myButton1'"));
+
+                    else
+                    {
+                        Response.Write(string.Format("<br/><br/><button type='submit' id='submit_res' class='myButton1' name='go_out'  value='go' runat='server' > Submit</button>"));
+                    }
+                    %>
+
     </div>
 
     <div class="pager">
@@ -42,12 +49,7 @@
 
     // Response.Write(string.Format("<a href='{0}'{1}> Back </a>", pathBack, "class='selected'"));
 
-    if (CurrentPage < 10)
-        Response.Write(string.Format("<button type='submit' name='{0}'{1}> Next</button>", "pathNext", "class='selected'"));
-    else
-    {
-        Response.Write(string.Format("<button type='submit' id='submit_res' name='go_out'  value='go' runat='server' > Submit</button>"));
-    }
+
 
 
 

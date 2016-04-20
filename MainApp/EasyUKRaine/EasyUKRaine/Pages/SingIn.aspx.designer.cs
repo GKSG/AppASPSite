@@ -22,6 +22,24 @@ namespace EasyUKRaine.Pages {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl singInYet;
         
         /// <summary>
+        /// check_login control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label check_login;
+        
+        /// <summary>
+        /// check_pass control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label check_pass;
+        
+        /// <summary>
         /// inputLogin control.
         /// </summary>
         /// <remarks>
@@ -47,6 +65,15 @@ namespace EasyUKRaine.Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button button_SingIn;
+        
+        /// <summary>
+        /// regLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor regLink;
         
         /// <summary>
         /// singInAlready control.
