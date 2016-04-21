@@ -89,7 +89,8 @@ namespace EasyUKRaine.Pages
                 check_login.Visible = true;
                 check = false;
             }
-
+            string scrp = "alert('Incorrect password od login!');";
+            ScriptManager.RegisterStartupScript(this, GetType(), "alert", scrp, true);
             return check;
         }
 

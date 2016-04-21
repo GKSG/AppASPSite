@@ -20,6 +20,10 @@ namespace EasyUKRaine.Pages
         private bool checkPush = true;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Repository.GetInstance().CurrentUser == null || Repository.GetInstance().CurrentUser.Check_FirstTest == true)
+            {
+                Response.Redirect(RouteTable.Routes.GetVirtualPath(null, null).VirtualPath);
+            }
             if (IsPostBack)
             {
 
@@ -99,6 +103,7 @@ namespace EasyUKRaine.Pages
                 {
 
                     Repository.GetInstance().CurrentUser.Level = Repository.GetInstance().CurrentUser.Score / 100;
+                    Repository.GetInstance().CurrentUser.Check_FirstTest = true;
                     Repository.GetInstance().UpdateUserAccount(Repository.GetInstance().CurrentUser);
 
 

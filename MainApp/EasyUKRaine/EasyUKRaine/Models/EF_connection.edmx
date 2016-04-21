@@ -51,6 +51,7 @@ warning 6002: The table/view 'EasyUKRainian.dbo.UserAccount' does not have a pri
           <Property Name="Donut" Type="varchar" MaxLength="20" />
           <Property Name="Level" Type="int" />
           <Property Name="Score" Type="int" />
+          <Property Name="Check_FirstTest" Type="bit" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'EasyUKRainian.dbo.UserHistory' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -120,7 +121,8 @@ warning 6002: The table/view 'EasyUKRainian.dbo.Word' does not have a primary ke
     [UserAccount].[UserPassword] AS [UserPassword], 
     [UserAccount].[Donut] AS [Donut], 
     [UserAccount].[Level] AS [Level], 
-    [UserAccount].[Score] AS [Score]
+    [UserAccount].[Score] AS [Score], 
+    [UserAccount].[Check_FirstTest] AS [Check_FirstTest]
     FROM [dbo].[UserAccount] AS [UserAccount]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="UserHistory" EntityType="Self.UserHistory" store:Type="Tables" store:Schema="dbo">
@@ -187,17 +189,6 @@ warning 6002: The table/view 'EasyUKRainian.dbo.Word' does not have a primary ke
           <Property Name="Translate1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="ImageLink" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityType Name="UserAccount">
-          <Key>
-            <PropertyRef Name="UsID" />
-          </Key>
-          <Property Name="UsID" Type="Int32" Nullable="false" />
-          <Property Name="UserName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="UserPassword" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="Donut" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="Level" Type="Int32" />
-          <Property Name="Score" Type="Int32" />
-        </EntityType>
         <EntityType Name="UserHistory">
           <Key>
             <PropertyRef Name="HID" />
@@ -235,11 +226,23 @@ warning 6002: The table/view 'EasyUKRainian.dbo.Word' does not have a primary ke
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="Topic" EntityType="Self.Topic" />
           <EntitySet Name="Translate" EntityType="Self.Translate" />
-          <EntitySet Name="UserAccount" EntityType="Self.UserAccount" />
           <EntitySet Name="UserHistory" EntityType="Self.UserHistory" />
           <EntitySet Name="UserInfo" EntityType="Self.UserInfo" />
           <EntitySet Name="Word" EntityType="Self.Word" />
+          <EntitySet Name="UserAccount" EntityType="EasyUKRainianModel.UserAccount" />
         </EntityContainer>
+        <EntityType Name="UserAccount">
+          <Key>
+            <PropertyRef Name="UsID" />
+          </Key>
+          <Property Name="UsID" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="UserPassword" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Donut" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Level" Type="Int32" />
+          <Property Name="Score" Type="Int32" />
+          <Property Name="Check_FirstTest" Type="Boolean" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -278,18 +281,6 @@ warning 6002: The table/view 'EasyUKRainian.dbo.Word' does not have a primary ke
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="UserAccount">
-            <EntityTypeMapping TypeName="EasyUKRainianModel.UserAccount">
-              <MappingFragment StoreEntitySet="UserAccount">
-                <ScalarProperty Name="UsID" ColumnName="UsID" />
-                <ScalarProperty Name="UserName" ColumnName="UserName" />
-                <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
-                <ScalarProperty Name="Donut" ColumnName="Donut" />
-                <ScalarProperty Name="Level" ColumnName="Level" />
-                <ScalarProperty Name="Score" ColumnName="Score" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="UserHistory">
             <EntityTypeMapping TypeName="EasyUKRainianModel.UserHistory">
               <MappingFragment StoreEntitySet="UserHistory">
@@ -323,6 +314,19 @@ warning 6002: The table/view 'EasyUKRainian.dbo.Word' does not have a primary ke
                 <ScalarProperty Name="WID" ColumnName="WID" />
                 <ScalarProperty Name="TopicID" ColumnName="TopicID" />
                 <ScalarProperty Name="Word1" ColumnName="Word" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserAccount">
+            <EntityTypeMapping TypeName="EasyUKRainianModel.UserAccount">
+              <MappingFragment StoreEntitySet="UserAccount">
+                <ScalarProperty Name="Check_FirstTest" ColumnName="Check_FirstTest" />
+                <ScalarProperty Name="Score" ColumnName="Score" />
+                <ScalarProperty Name="Level" ColumnName="Level" />
+                <ScalarProperty Name="Donut" ColumnName="Donut" />
+                <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UsID" ColumnName="UsID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

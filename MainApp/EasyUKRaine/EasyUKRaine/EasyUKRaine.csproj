@@ -98,7 +98,8 @@
     <Content Include="kuchmynda\Taskes\Single\STaskPage Image.aspx" />
     <Content Include="kuchmynda\Taskes\Single\STaskPage.aspx" />
     <Content Include="Pages\About.aspx" />
-    <Content Include="Pages\FirstTest11.aspx" />
+    <Content Include="Pages\FirstTest.aspx" />
+    <Content Include="Pages\FirstTest1.aspx" />
     <Content Include="Pages\Grammar.aspx" />
     <Content Include="Models\EF_connection.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -112,7 +113,6 @@
     </Content>
     <Content Include="packages.config" />
     <Content Include="Pages\AccountLogin.aspx" />
-    <Content Include="Pages\FirstTest.aspx" />
     <Content Include="Pages\Games.aspx" />
     <Content Include="Pages\MainForm.aspx" />
     <Content Include="Pages\MainWindow.Master" />
@@ -141,6 +141,7 @@
     <Content Include="Pages\Registration.aspx" />
     <Content Include="Pages\SingIn.aspx" />
     <Content Include="Pages\Tags.aspx" />
+    <Content Include="Pages\Videos.aspx" />
     <Content Include="Pages\Vocabulary.aspx" />
     <Content Include="Pages\WebForm1.aspx" />
     <Content Include="Web.config" />
@@ -233,12 +234,19 @@
     <Compile Include="Pages\About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\FirstTest11.aspx.cs">
-      <DependentUpon>FirstTest11.aspx</DependentUpon>
+    <Compile Include="Pages\FirstTest.aspx.cs">
+      <DependentUpon>FirstTest.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\FirstTest11.aspx.designer.cs">
-      <DependentUpon>FirstTest11.aspx</DependentUpon>
+    <Compile Include="Pages\FirstTest.aspx.designer.cs">
+      <DependentUpon>FirstTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\FirstTest1.aspx.cs">
+      <DependentUpon>FirstTest1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\FirstTest1.aspx.designer.cs">
+      <DependentUpon>FirstTest1.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Grammar.aspx.cs">
       <DependentUpon>Grammar.aspx</DependentUpon>
@@ -293,13 +301,6 @@
     <Compile Include="Pages\AccountLogin.aspx.designer.cs">
       <DependentUpon>AccountLogin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\FirstTest.aspx.cs">
-      <DependentUpon>FirstTest.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\FirstTest.aspx.designer.cs">
-      <DependentUpon>FirstTest.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Pages\Games.aspx.cs">
       <DependentUpon>Games.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -341,6 +342,13 @@
     </Compile>
     <Compile Include="Pages\Tags.aspx.designer.cs">
       <DependentUpon>Tags.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Videos.aspx.cs">
+      <DependentUpon>Videos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Videos.aspx.designer.cs">
+      <DependentUpon>Videos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Vocabulary.aspx.cs">
       <DependentUpon>Vocabulary.aspx</DependentUpon>

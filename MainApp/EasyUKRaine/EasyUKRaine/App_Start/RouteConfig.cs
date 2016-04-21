@@ -26,6 +26,8 @@ namespace EasyUKRaine.App_Start
             routes.MapPageRoute("Grammar", "Grammar", "~/Pages/Grammar.aspx");
             routes.MapPageRoute("findWords", "findWords", "~/Pages/WebForm1.aspx");
             routes.MapPageRoute("about", "about", "~/Pages/About.aspx");
+            routes.MapPageRoute("vocabularyTest", "vocabularyTest", "~/Pages/FirstTest1.aspx");
+            routes.MapPageRoute("video", "video", "~/Pages/Videos.aspx");
             //routes.MapPageRoute("checkout", "checkout", "~/Pages/Checkout.aspx");
 
             //routes.MapPageRoute("admin_orders", "admin/orders", "~/Pages/Admin/Orders.aspx");

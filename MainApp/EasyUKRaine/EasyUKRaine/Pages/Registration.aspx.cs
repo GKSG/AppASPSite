@@ -38,7 +38,7 @@ namespace EasyUKRaine.Pages
 
                 userAccount.UserName = login.Value;
                 userAccount.UserPassword = password.Value;
-
+                userAccount.Check_FirstTest = false;
 
                 userInfo.Name = fname.Value;
                 userInfo.Surname = lname.Value;
@@ -47,6 +47,7 @@ namespace EasyUKRaine.Pages
                 userInfo.E_mail = email.Value;
                 userInfo.DateOfBirth = null;
                 userInfo.DateOfReg = DateTime.Today;
+                
 
 
                 Repository.GetInstance().SaveUser(userInfo, userAccount);
