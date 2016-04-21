@@ -19,5 +19,11 @@ namespace EasyUKRaine.Pages
         {
             Response.Redirect(RouteTable.Routes.GetVirtualPath(null, "Tags", null).VirtualPath);
         }
+
+        
+        protected void Action_findWords(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect(RouteTable.Routes.GetVirtualPath(null, "findWords", null).VirtualPath);
+        }
     }
 }

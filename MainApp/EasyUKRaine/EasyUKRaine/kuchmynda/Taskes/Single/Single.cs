@@ -8,7 +8,7 @@ namespace WebApplication1.Taskes.Single
         public string Sence { get; set; }
         public LevelUA Level { get; set; } = LevelUA.Beginner;
         public int PointsOfTask { get; set; } = 100;
-        public string CorrectWord { get; set; }
+        public object CorrectAnswer { get; set; } = string.Empty;
         public object Content { get; set; }
     }
     class SingleWord : SingleTask

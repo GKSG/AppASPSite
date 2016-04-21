@@ -34,7 +34,7 @@ namespace WebApplication1.Taskes
             if (next)
                 task = new SingleImage
                 {
-                    CorrectWord = repo.topics[index.Key].words[index.Value].word,
+                    CorrectAnswer = repo.topics[index.Key].words[index.Value].word,
                     Content = repo.topics[index.Key].words[index.Value].translates[0].image
                 };
                 
@@ -71,7 +71,7 @@ namespace WebApplication1.Taskes
         }
 
 
-        protected void Unnamed_Click(object sender, EventArgs e)
+       /* protected void Unnamed_Click(object sender, EventArgs e)
         {
             if (((SingleTask) task).CorrectWord.Replace('\"','\'') == InputWord.Text.Trim(' '))
             {
@@ -80,6 +80,6 @@ namespace WebApplication1.Taskes
                     $"<script type=\"text/javascript\">alert(\"Чудово! Wery well, bro!\")</script>");      
             }
 
-        }
+        }*/
     }
 }

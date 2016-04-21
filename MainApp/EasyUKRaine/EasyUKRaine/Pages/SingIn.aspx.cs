@@ -15,25 +15,47 @@ namespace EasyUKRaine.Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            regLink.HRef = RouteTable.Routes.GetVirtualPath(null, "registration", null).VirtualPath;
+            check_pass.Visible = false;
+            check_login.Visible = false;
 
             if (IsPostBack)
             {
-
-                string user = inputLogin.Value;
-                string pass = inputPassword.Value;
-                Repository.GetInstance().CurrentUser = Repository.GetInstance().UsersAccounts.FirstOrDefault(x => x.UserName == user && x.UserPassword == pass);
-                if (Repository.GetInstance().CurrentUser != null)
+                if (Validation())
                 {
-                    FormsAuthentication.SetAuthCookie(user, false);
-                    
+                    string user = inputLogin.Value;
+                    string pass = inputPassword.Value;
+
+                    Repository.GetInstance().singIn.Login(user, pass, this);
+
+                    if (!Page.User.Identity.IsAuthenticated)
+                    {
+                        singInYet.Visible = true;
+                        singInAlready.Visible = false;
+                    }
+                    else
+                    {
+                        singInYet.Visible = false;
+                        singInAlready.Visible = true;
+                    }
+                    Repository.GetInstance().CurrentUser =
+                        Repository.GetInstance()
+                            .UsersAccounts.FirstOrDefault(x => x.UserName == user && x.UserPassword == pass);
+                    if (Repository.GetInstance().CurrentUser != null)
+                    {
+                        FormsAuthentication.SetAuthCookie(user, false);
+                        Response.Redirect(RouteTable.Routes.GetVirtualPath(null, null).VirtualPath);
+
+                    }
+                    else
+                    {
+                        // ModelState.AddModelError("fail", "Login failed. Please try again");
+
+                        FormsAuthentication.SignOut();
+                        Repository.GetInstance().CurrentUser = null;
+                    }
+                    //Response.Redirect(Request.Path);
                 }
-                else {
-                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Wrong login or password!')", true);
-                    FormsAuthentication.SignOut();
-                    Repository.GetInstance().CurrentUser = null;
-                }
-                Response.Redirect(Request.Path);
 
             }
             else
@@ -48,7 +70,27 @@ namespace EasyUKRaine.Pages
                     singInYet.Visible = false;
                     singInAlready.Visible = true;
                 }
+                
             }
+        }
+
+        private bool Validation()
+        {
+            bool check = true;
+            if (Repository.GetInstance().UsersAccounts.FirstOrDefault(x => x.UserName == inputLogin.Value) == null)
+            {
+                check_login.Text = "Incorrect login! Please try again!";
+                check_login.Visible = true;
+                check = false;
+            }
+            else if (Repository.GetInstance().UsersAccounts.FirstOrDefault(x => x.UserPassword == inputPassword.Value) == null)
+            {
+                check_login.Text = "Incorrect password! Please try again!";
+                check_login.Visible = true;
+                check = false;
+            }
+
+            return check;
         }
 
         protected string CreateHomeLinkHtml()

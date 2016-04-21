@@ -89,7 +89,6 @@
     <Content Include="Content\theme.min.css" />
     <Content Include="Controls\Autorization.ascx" />
     <Content Include="Controls\MenuControl.ascx" />
-    <Content Include="Pages\Tags.aspx" />
     <Content Include="kuchmynda\Taskes\Anagram\ATaskHard.aspx" />
     <Content Include="kuchmynda\Taskes\Anagram\ATaskPage Image.aspx" />
     <Content Include="kuchmynda\Taskes\Anagram\ATaskPage.aspx" />
@@ -98,7 +97,9 @@
     <Content Include="kuchmynda\Taskes\Matches\MTaskPageHard.aspx" />
     <Content Include="kuchmynda\Taskes\Single\STaskPage Image.aspx" />
     <Content Include="kuchmynda\Taskes\Single\STaskPage.aspx" />
-    <Content Include="Pages\Vocabulary.aspx" />
+    <Content Include="Pages\About.aspx" />
+    <Content Include="Pages\FirstTest11.aspx" />
+    <Content Include="Pages\Grammar.aspx" />
     <Content Include="Models\EF_connection.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>EF_connection.edmx</DependentUpon>
@@ -122,6 +123,12 @@
     <Content Include="Models\EF_connection.edmx.diagram">
       <DependentUpon>EF_connection.edmx</DependentUpon>
     </Content>
+    <Content Include="Content\Ukrainian-Language-for-Peace-Corps.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\uk_UA.dic">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -133,6 +140,9 @@
     <Content Include="Global.asax" />
     <Content Include="Pages\Registration.aspx" />
     <Content Include="Pages\SingIn.aspx" />
+    <Content Include="Pages\Tags.aspx" />
+    <Content Include="Pages\Vocabulary.aspx" />
+    <Content Include="Pages\WebForm1.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -153,13 +163,6 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Tags.aspx.cs">
-      <DependentUpon>Tags.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\Tags.aspx.designer.cs">
-      <DependentUpon>Tags.aspx</DependentUpon>
     </Compile>
     <Compile Include="kuchmynda\Taskes\Anagram\Anagram.cs" />
     <Compile Include="kuchmynda\Taskes\Anagram\ATaskHard.aspx.cs">
@@ -221,13 +224,30 @@
     <Compile Include="kuchmynda\Taskes\Single\STaskPage.aspx.designer.cs">
       <DependentUpon>STaskPage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Vocabulary.aspx.cs">
-      <DependentUpon>Vocabulary.aspx</DependentUpon>
+    <Compile Include="Models\FTquestion.cs" />
+    <Compile Include="Models\SingIn.cs" />
+    <Compile Include="Pages\About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Vocabulary.aspx.designer.cs">
-      <DependentUpon>Vocabulary.aspx</DependentUpon>
+    <Compile Include="Pages\About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\FirstTest11.aspx.cs">
+      <DependentUpon>FirstTest11.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\FirstTest11.aspx.designer.cs">
+      <DependentUpon>FirstTest11.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Grammar.aspx.cs">
+      <DependentUpon>Grammar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Grammar.aspx.designer.cs">
+      <DependentUpon>Grammar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Helpers\SessionHelper.cs" />
     <Compile Include="Models\EF_connection.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -314,6 +334,27 @@
     </Compile>
     <Compile Include="Pages\SingIn.aspx.designer.cs">
       <DependentUpon>SingIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Tags.aspx.cs">
+      <DependentUpon>Tags.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Tags.aspx.designer.cs">
+      <DependentUpon>Tags.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Vocabulary.aspx.cs">
+      <DependentUpon>Vocabulary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Vocabulary.aspx.designer.cs">
+      <DependentUpon>Vocabulary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -11,7 +11,7 @@ namespace WebApplication1.Taskes
 {
     public partial class STaskPage : System.Web.UI.Page
     {
-        private static bool next = true;
+        private static bool next = false;
         private static KeyValuePair<int, int> index;
         private static Random randTag;
         private static Random randWord;
@@ -24,17 +24,18 @@ namespace WebApplication1.Taskes
         }
 
         protected void MainPanel_Load(object sender, EventArgs e)
-        {     
-            
-                randTag = new Random((int) DateTime.Now.Ticks);
-                randWord = new Random((int) DateTime.Now.Ticks);
-                int t = randTag.Next(repo.topics.Count);
-                int w = randWord.Next(repo.topics[t].words.Count);
-                index = new KeyValuePair<int, int>(t, w);
+        {
+
+            randTag = new Random((int) DateTime.Now.Ticks);
+            randWord = new Random((int) DateTime.Now.Ticks);
+            int t = randTag.Next(repo.topics.Count);
+            int w = randWord.Next(repo.topics[t].words.Count);
+            index = new KeyValuePair<int, int>(t, w);
             if (next)
+            {
                 task = new SingleWord
                 {
-                    CorrectWord = repo.topics[index.Key].words[index.Value].word,
+                    CorrectAnswer = repo.topics[index.Key].words[index.Value].word,
                     Content = repo.topics[index.Key].words[index.Value].translates[0].translate
                 };
                 MainPanel.Width = 512;
@@ -46,7 +47,7 @@ namespace WebApplication1.Taskes
                 sense.Font.Name = "Helvetica";
                 sense.Font.Size = 26;
                 //----пофіксити багатозначність
-                
+
                 Label content = new Label();
                 content.Font.Name = "Helvetica";
                 content.Font.Size = 40;
@@ -59,21 +60,24 @@ namespace WebApplication1.Taskes
                 MainPanel.Controls.Add(sense);
                 MainPanel.Controls.Add(content);
 
+            }
+            next = true;
 
-                next = false;
-            
         }
 
 
-        protected void Unnamed_Click(object sender, EventArgs e)
+        /*protected void Unnamed_Click(object sender, EventArgs e)
         {
+            if (((SingleTask) task) == null)
+            { next = true; return; }
             if (((SingleTask) task).CorrectWord.Replace('\"','\'') == InputWord.Text.Trim(' '))
             {
                 next = true;           
                 ClientScript.RegisterClientScriptBlock(this.GetType(), "calling",
-                    $"<script type=\"text/javascript\">alert(\"Чудово! Wery well, bro!\")</script>");      
+                    $"<script type=\"text/javascript\">alert(\"Чудово! Wery well, bro!\")</script>");
+                
             }
-
-        }
+            
+        }*/
     }
 }

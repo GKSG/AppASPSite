@@ -28,6 +28,9 @@ namespace EasyUKRaine.Models.Repository
             return _repositoryIstance;
         }
 
+        public SingIn singIn = new SingIn();
+
+
         private EasyUKRainianEntities context = new EasyUKRainianEntities();
 
         private UserAccount _currentUser = new UserAccount();
@@ -59,6 +62,26 @@ namespace EasyUKRaine.Models.Repository
             get { return _categoryList;}
         }
 
+        private List<FTquestion> _FTlist = new List<FTquestion>()
+        {
+            new FTquestion() {ID= 1, quizz = "How would you write \"a very nice friend\"?", answer = "дуже хороший друг", AnswerList = {"зелене дерево", "висотна будівля", "дуже старий чоловік","дуже хороший друг"}},
+            new FTquestion() {ID= 2, quizz = "Which one of the following means \"square\":", answer = "квадратний", AnswerList = { "круглий", "квадратний", "трикутний", "солодкий", "глибокий"}},
+            new FTquestion() {ID= 3, quizz = "Which one of the following means \"red\":", answer = "червоний", AnswerList = { "червоний", "білий", "синій", "жовтий", "чорний"}},
+            new FTquestion() {ID= 4, quizz = "Which one of the following means \"today\":", answer = "сьогодні", AnswerList = { "сьогодні", "негайно", "вчора", "завтра", "вже"}},
+            new FTquestion() {ID= 5, quizz = "How would you write \"quickly\"?", answer = "швидко", AnswerList = { "повільно", "швидко", "майже", "разом", "насправді"}},
+            new FTquestion() {ID= 6, quizz = "Which one of the following means the number \"six\"?", answer = "шість", AnswerList = { "три", "дев'ять", "сім", "тринадцять", "шість"}},
+            new FTquestion() {ID= 7, quizz = "How would you write \"green car\"?", answer = "зелений автомобіль", AnswerList = { "гараж", "мій автомобіль", "три автомобіля", "зелений автомобіль", "ззовні автомобіля"}},
+            new FTquestion() {ID= 8, quizz = "What's \"nose\" in Ukrainian?", answer = "ніс", AnswerList = { "плече", "шия", "серце", "ніс", "вухо"}},
+            new FTquestion() {ID= 9, quizz = "How would you write \"we speak\"?", answer = "Ми говоримо", AnswerList = { "Вона говорить", "Ви говорите", "Я говорю", "Ми говоримо", "Він говорить"}},
+            new FTquestion() {ID= 10, quizz = "How would you write \"his chickens\"?", answer = "його кури", AnswerList = { "вона американка", "його кури", "він щасливий", "ваша донька", "її кури"}},
+        };
+
+        public List<FTquestion> GetFTquestions
+        {
+            get { return _FTlist; }
+        } 
+
+
 
 
 
@@ -70,7 +93,6 @@ namespace EasyUKRaine.Models.Repository
             userInfo.InfoID = maxid;
             userInfo.UsID = userAccount.UsID;
 
-
             var queryUserAccount = String.Format("Insert into UserAccount (UsId,UserName,UserPassword,Donut,Level,Score) " +
                                       "Values({0}, '{1}', '{2}', '{3}', {4}, {5})",userAccount.UsID,userAccount.UserName,
                                       userAccount.UserPassword,userAccount.Donut,userAccount.Level,userAccount.Score);
@@ -81,12 +103,27 @@ namespace EasyUKRaine.Models.Repository
                                               userInfo.Country,
                                               userInfo.Location, userInfo.E_mail);
 
-
             ExecuteQuery(queryUserAccount);
             ExecuteQuery(queryUserInfo);
+        }
+
+        public void UpdateUserAccount(UserAccount user)
+        {
+            try
+            {
+                var queryUserScore = String.Format("Update UserAccount Set Score = {0}  where UsID = {1}" +
+                                                   "  update UserAccount Set Level = Score where UsID = {1}", user.Score, user.UsID);
 
 
+                ExecuteQuery(queryUserScore);
 
+               // context.SaveChanges();
+                //  ExecuteQuery(queryUserLevel);
+            }
+            catch (Exception ex)
+            {
+                
+            }
         }
 
         private void ExecuteQuery(string query)
@@ -96,6 +133,8 @@ namespace EasyUKRaine.Models.Repository
                 Context.Database.ExecuteSqlCommand(query);
             }
         }
+
+        public List<int> HelpWithFT_list { get; set; } = new List<int>();
 
     }
 }

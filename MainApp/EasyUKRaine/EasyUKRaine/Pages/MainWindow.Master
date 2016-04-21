@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js" lang="">
 <head runat="server">
     <title>EasyUKRaine</title>
         <link rel="stylesheet" href="/Content/Style.css" />
@@ -18,27 +18,49 @@
 
 </head>
 <body>
+
+ 
     <form id="form1" runat="server">
         <div id="header" >
             
             <SS:Autorization runat="server" />
-            <div class="title">EasyUKRaine</div>
+            <div class="title"><a href="main" style="color: white; text-decoration: none; ">EasyUKRaine</a></div>
         </div>
-        <div id="categories">
+            <div class="jumbotron">
+       
+        <div class="container-fluid">
+            
+            <div class="row">
+        <div id="categories"> 
+        <!--    <div class="col-xs-2"> -->
             <SS:Links runat="server" />
+
         </div>
         <div>
+
             <asp:ContentPlaceHolder ID="bodyContent" runat="server">
             </asp:ContentPlaceHolder>
+            </div>
+
         </div>
-        <div class="container-fluid">
+</div>
+    </div>
+        
+            <div class="container-fluid">
         <!-- Example row of columns -->
         <hr>
         <footer>
-            <p>&copy; Company 2015</p>
+            <p>&copy; GKSG 2016</p>
         </footer>
     </div>
-
     </form>
+
+    
+        <script>
+    window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')
+    </script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+    
 </body>
 </html>

@@ -24,7 +24,7 @@ namespace EasyUKRaine.Controls
         protected string CreateHomeLinkHtml()
         {
             string path = RouteTable.Routes.GetVirtualPath(null, null).VirtualPath;
-            return string.Format("<a href='{0}'>Home</a>", path);
+            return string.Format("<li><a href='{0}'>Home</a></li>", path);
         }
 
         protected string CreateLinkHtml(string category)
@@ -37,16 +37,24 @@ namespace EasyUKRaine.Controls
             if (category == "Test")
             {
                 path = RouteTable.Routes.GetVirtualPath(null, "firstTest", null).VirtualPath;
-
             }
 
             if (category == "Games")
             {
                 path = RouteTable.Routes.GetVirtualPath(null, "Games", null).VirtualPath;
-
             }
 
-            return  string.Format("<a href='{0}' {1}>{2}</a>", path, category == selectedCategory ? "class='selected'" : "", category);
+            if (category == "Grammar")
+            {
+                path = RouteTable.Routes.GetVirtualPath(null, "Grammar", null).VirtualPath;
+            }
+
+            if (category == "About")
+            {
+                path = RouteTable.Routes.GetVirtualPath(null, "about", null).VirtualPath;
+            }
+
+            return  string.Format("<li><a href='{0}' >{1}</a></li>",path,  category);
         }
     }
 }

@@ -2,7 +2,8 @@
 <%@ Import Namespace="System.Web.Routing" %>
 
 <asp:Content ContentPlaceHolderID="bodyContent" runat="server">
-<div id="content">
+
+             <div  >
    Hello Easy Ukraine
 </div>
 </asp:Content>
