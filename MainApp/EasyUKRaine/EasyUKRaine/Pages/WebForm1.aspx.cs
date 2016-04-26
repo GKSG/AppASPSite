@@ -207,7 +207,7 @@ namespace game
                     words.Clear();
                     Table_res.Rows.Clear();
                     tr.Clear();
-                    Repository.GetInstance().CurrentUser.Score += WordsDB1.Count*5;
+                    Repository.GetInstance().CurrentUser.Score += WordsDB1.Count*4;
                     Repository.GetInstance().CurrentUser.Level = Repository.GetInstance().CurrentUser.Score /100;
                     Repository.GetInstance().UpdateUserAccount(Repository.GetInstance().CurrentUser);
                     //  ClientScript.RegisterStartupScript(this.GetType(), "calling", $"<script type=\"text/javascript\">alert(\"Good job!!!\")</script>");

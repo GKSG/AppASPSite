@@ -55,9 +55,7 @@ namespace EasyUKRaine.Pages
                         //num = RandomTask.Next(8);
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "alert",
                              $"if (window.confirm(\"Чудово! Wery well, bro!\")) window.location.href=\"{RouteTable.Routes.GetVirtualPath(null, "vocabularyTest", null).VirtualPath}?num={(num+1)}\"", true);
-                        Repository.GetInstance().CurrentUser.Score += 27;
-                        Repository.GetInstance().CurrentUser.Level = Repository.GetInstance().CurrentUser.Score / 100;
-                        Repository.GetInstance().UpdateUserAccount(Repository.GetInstance().CurrentUser);
+
                     }
                     else
                     {
@@ -75,9 +73,6 @@ namespace EasyUKRaine.Pages
                         //num = RandomTask.Next(5);
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "alert",
                              $"if (window.confirm(\"Чудово! Wery well, bro!\")) window.location.href=\"{RouteTable.Routes.GetVirtualPath(null, "vocabularyTest", null).VirtualPath}?num={(num + 1)}\"", true);
-                        Repository.GetInstance().CurrentUser.Score += 12;
-                        Repository.GetInstance().CurrentUser.Level = Repository.GetInstance().CurrentUser.Score / 100;
-                        Repository.GetInstance().UpdateUserAccount(Repository.GetInstance().CurrentUser);
                     }
                     else
                     {

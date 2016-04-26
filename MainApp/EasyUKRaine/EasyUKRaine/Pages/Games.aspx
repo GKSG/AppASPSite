@@ -8,8 +8,6 @@
 <asp:Table runat="server" Width="744px" Height="273px">
     <asp:TableRow runat="server">
 
-            <asp:TableCell runat="server"><asp:ImageButton runat="server" OnClick="OnClick" src="Content/Image/images.jpg" ToolTip="Vocabulary"/></asp:TableCell>
-
             <asp:TableCell runat="server"><asp:ImageButton runat="server" OnClick="Action_findWords" src="Content/Image/findWords.jpg"/></asp:TableCell>
     </asp:TableRow>
 </asp:Table>

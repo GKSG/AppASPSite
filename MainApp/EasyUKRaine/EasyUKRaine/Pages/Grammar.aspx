@@ -6,7 +6,7 @@
     <p>
         &nbsp;Hello If you here, you decided to improve your Ukrainian grammar skills. There are some books for your study.</p>
     <p>
-        <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">LinkButton</asp:LinkButton>
+        <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Grammar book</asp:LinkButton>
     </p>
                  </div>
 </asp:Content>
