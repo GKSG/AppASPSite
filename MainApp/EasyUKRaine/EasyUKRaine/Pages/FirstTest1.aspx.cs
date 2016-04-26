@@ -54,7 +54,10 @@ namespace EasyUKRaine.Pages
                         next = true;
                         num = RandomTask.Next(8);
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "alert",
-                             $"if (window.confirm(\"Чудово! Wery well, bro!\")) window.location.href=\"{RouteTable.Routes.GetVirtualPath(null, "firstTest", null).VirtualPath}\"", true);
+                             $"if (window.confirm(\"Чудово! Wery well, bro!\")) window.location.href=\"{RouteTable.Routes.GetVirtualPath(null, "vocabularyTest", null).VirtualPath}\"", true);
+                        Repository.GetInstance().CurrentUser.Score += 25*5;
+                        Repository.GetInstance().CurrentUser.Level = Repository.GetInstance().CurrentUser.Score / 100;
+                        Repository.GetInstance().UpdateUserAccount(Repository.GetInstance().CurrentUser);
 
                     }
                     else
@@ -72,7 +75,10 @@ namespace EasyUKRaine.Pages
                         InputWord = new TextBox();
                         num = RandomTask.Next(5);
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "alert",
-                             $"if (window.confirm(\"Чудово! Wery well, bro!\")) window.location.href=\"{RouteTable.Routes.GetVirtualPath(null, "firstTest", null).VirtualPath}\"", true);
+                             $"if (window.confirm(\"Чудово! Wery well, bro!\")) window.location.href=\"{RouteTable.Routes.GetVirtualPath(null, "vocabularyTest", null).VirtualPath}\"", true);
+                        Repository.GetInstance().CurrentUser.Score += 75;
+                        Repository.GetInstance().CurrentUser.Level = Repository.GetInstance().CurrentUser.Score/100;
+                        Repository.GetInstance().UpdateUserAccount(Repository.GetInstance().CurrentUser);
                     }
                     else
                     {

@@ -110,7 +110,7 @@ namespace EasyUKRaine.Models.Repository
             try
             {
                 var queryUserScore = String.Format("Update UserAccount Set Check_FirstTest='{2}', Score = {0}  where UsID = {1}" +
-                                                   "  update UserAccount Set Level = Score where UsID = {1}", user.Score, user.UsID,1);
+                                                   "  update UserAccount Set Level = {3} where UsID = {1}", user.Score, user.UsID,1,user.Level);
 
                 ExecuteQuery(queryUserScore);
             }

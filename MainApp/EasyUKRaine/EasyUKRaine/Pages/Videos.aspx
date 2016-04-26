@@ -10,15 +10,15 @@
          }
         #video12 iframe {
             position: absolute;
-            width: calc(80%);
-            height: 80%;
+            width: calc(70%);
+            height: 60%;
         }
         #video12 div {
             position: absolute;
             top: 0;
             right: 0;
             width: 5em;
-            height: 80%;
+            height: 60%;
             overflow-y: auto;
         }
         #video12 span {
