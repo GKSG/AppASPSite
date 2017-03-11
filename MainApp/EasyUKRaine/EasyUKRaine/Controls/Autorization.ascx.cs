@@ -13,8 +13,6 @@ namespace EasyUKRaine.Controls
 {
     public partial class Autorization : System.Web.UI.UserControl
     {
-
-
         protected void Page_Load(object sender, EventArgs e)
         {
             
@@ -61,6 +59,7 @@ namespace EasyUKRaine.Controls
             }
             else
             {
+<<<<<<< HEAD
                 if (!Page.User.Identity.IsAuthenticated)
                 {
                     noAutor.Visible = true;
@@ -79,24 +78,49 @@ namespace EasyUKRaine.Controls
                 regLink.HRef = RouteTable.Routes.GetVirtualPath(null, "registration", null).VirtualPath;
                 singInLink.HRef = RouteTable.Routes.GetVirtualPath(null, "SingIn", null).VirtualPath;
             }
+=======
+                Refresh();
+            }
+            if (Repository.GetInstance().CurrentUser != null)
+            {
+                Refresh();
+            }
+
+
+
+>>>>>>> origin/Andrew
         }
 
         public void Refresh()
         {
+<<<<<<< HEAD
             if (Repository.GetInstance().CurrentUser == null)
+=======
+            if (!Page.User.Identity.IsAuthenticated)
+>>>>>>> origin/Andrew
             {
                 noAutor.Visible = true;
                 yesAutor.Visible = false;
             }
             else
             {
+<<<<<<< HEAD
                 Label_User.Text = Repository.GetInstance().CurrentUser.UserName;
+=======
+                Label_User.Text = GetUser();
+>>>>>>> origin/Andrew
                 Label_Level.Text = Repository.GetInstance().CurrentUser.Level.ToString();
                 Label_Score.Text = Repository.GetInstance().CurrentUser.Score.ToString();
 
                 noAutor.Visible = false;
                 yesAutor.Visible = true;
             }
+<<<<<<< HEAD
+=======
+
+            regLink.HRef = RouteTable.Routes.GetVirtualPath(null, "registration", null).VirtualPath;
+            singInLink.HRef = RouteTable.Routes.GetVirtualPath(null, "SingIn", null).VirtualPath;
+>>>>>>> origin/Andrew
         }
 
         protected string GetUser()

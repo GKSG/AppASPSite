@@ -38,15 +38,25 @@ namespace EasyUKRaine.Pages
 
                 userAccount.UserName = login.Value;
                 userAccount.UserPassword = password.Value;
+<<<<<<< HEAD
 
+=======
+                userAccount.Check_FirstTest = false;
+>>>>>>> origin/Andrew
 
                 userInfo.Name = fname.Value;
                 userInfo.Surname = lname.Value;
                 userInfo.Country = country.Value;
                 userInfo.Location = city.Value;
                 userInfo.E_mail = email.Value;
+<<<<<<< HEAD
                 userInfo.DateOfBirth = Convert.ToDateTime("1995.10.12");
                 userInfo.DateOfReg = DateTime.Today;
+=======
+                userInfo.DateOfBirth = null;
+                userInfo.DateOfReg = DateTime.Today;
+                
+>>>>>>> origin/Andrew
 
 
                 Repository.GetInstance().SaveUser(userInfo, userAccount);

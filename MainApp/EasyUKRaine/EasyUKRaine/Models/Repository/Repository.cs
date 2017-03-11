@@ -13,8 +13,6 @@ namespace EasyUKRaine.Models.Repository
 
         private static readonly object locker = new object();
 
-       // public Repo.Repo  GroupRepo = new Repo.Repo();
-
 
         public static Repository GetInstance()
         {
@@ -54,7 +52,11 @@ namespace EasyUKRaine.Models.Repository
 
         private List<string> _categoryList = new List<string>()
         {
+<<<<<<< HEAD
             "Grammar", "Vocabulary", "Test", "Games", "About"
+=======
+            "Grammar", "Vocabulary","Video",  "Test", "Games", "About"
+>>>>>>> origin/Andrew
         };
 
         public List<string> GetCategoryList
@@ -93,9 +95,15 @@ namespace EasyUKRaine.Models.Repository
             userInfo.InfoID = maxid;
             userInfo.UsID = userAccount.UsID;
 
+<<<<<<< HEAD
             var queryUserAccount = String.Format("Insert into UserAccount (UsId,UserName,UserPassword,Donut,Level,Score) " +
                                       "Values({0}, '{1}', '{2}', '{3}', {4}, {5})",userAccount.UsID,userAccount.UserName,
                                       userAccount.UserPassword,userAccount.Donut,userAccount.Level,userAccount.Score);
+=======
+            var queryUserAccount = String.Format("Insert into UserAccount (UsId,UserName,UserPassword,Donut,Level,Score,Check_FirstTest) " +
+                                      "Values({0}, '{1}', '{2}', '{3}', {4}, {5}, '{6}')", userAccount.UsID,userAccount.UserName,
+                                      userAccount.UserPassword,userAccount.Donut,userAccount.Level,userAccount.Score,userAccount.Check_FirstTest);
+>>>>>>> origin/Andrew
 
             var queryUserInfo = String.Format("Insert into UserInfo (InfoId, UsId, Name, Surname, Country, Location, E_mail)" +
                                               "Values({0}, {1}, '{2}', '{3}', '{4}', '{5}', '{6}')",
@@ -106,6 +114,7 @@ namespace EasyUKRaine.Models.Repository
             ExecuteQuery(queryUserAccount);
             ExecuteQuery(queryUserInfo);
         }
+<<<<<<< HEAD
 
         public void UpdateUserAccount(UserAccount user)
         {
@@ -113,12 +122,23 @@ namespace EasyUKRaine.Models.Repository
             {
                 var queryUserScore = String.Format("Update UserAccount Set Score = {0}  where UsID = {1}" +
                                                    "  update UserAccount Set Level = Score where UsID = {1}", user.Score, user.UsID);
+=======
+>>>>>>> origin/Andrew
 
+        public void UpdateUserAccount(UserAccount user)
+        {
+            try
+            {
+                var queryUserScore = String.Format("Update UserAccount Set Check_FirstTest='{2}', Score = {0}  where UsID = {1}" +
+                                                   "  update UserAccount Set Level = {3} where UsID = {1}", user.Score, user.UsID,1,user.Level);
 
                 ExecuteQuery(queryUserScore);
+<<<<<<< HEAD
 
                // context.SaveChanges();
                 //  ExecuteQuery(queryUserLevel);
+=======
+>>>>>>> origin/Andrew
             }
             catch (Exception ex)
             {

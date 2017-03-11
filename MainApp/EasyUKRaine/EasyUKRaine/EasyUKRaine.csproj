@@ -56,6 +56,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.SqlServerCe.Entity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.SqlServerCompact.4.3.6\lib\net40\System.Data.SqlServerCe.Entity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -80,6 +84,15 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+<<<<<<< HEAD
+=======
+    <Content Include="Content\Image\findWords.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Image\girl.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+>>>>>>> origin/Andrew
     <Content Include="Content\Image\images.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -98,7 +111,12 @@
     <Content Include="kuchmynda\Taskes\Single\STaskPage Image.aspx" />
     <Content Include="kuchmynda\Taskes\Single\STaskPage.aspx" />
     <Content Include="Pages\About.aspx" />
+<<<<<<< HEAD
     <Content Include="Pages\FirstTest11.aspx" />
+=======
+    <Content Include="Pages\FirstTest.aspx" />
+    <Content Include="Pages\FirstTest1.aspx" />
+>>>>>>> origin/Andrew
     <Content Include="Pages\Grammar.aspx" />
     <Content Include="Models\EF_connection.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -112,10 +130,29 @@
     </Content>
     <Content Include="packages.config" />
     <Content Include="Pages\AccountLogin.aspx" />
+<<<<<<< HEAD
     <Content Include="Pages\FirstTest.aspx" />
+=======
+>>>>>>> origin/Andrew
     <Content Include="Pages\Games.aspx" />
     <Content Include="Pages\MainForm.aspx" />
     <Content Include="Pages\MainWindow.Master" />
+    <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
+    <None Include="_bin_deployableAssemblies\x86\sqlceqp40.dll" />
+    <None Include="_bin_deployableAssemblies\x86\sqlceme40.dll" />
+    <None Include="_bin_deployableAssemblies\x86\sqlceer40EN.dll" />
+    <None Include="_bin_deployableAssemblies\x86\sqlcecompact40.dll" />
+    <None Include="_bin_deployableAssemblies\x86\sqlceca40.dll" />
+    <None Include="_bin_deployableAssemblies\x86\Microsoft.VC90.CRT\README_ENU.txt" />
+    <None Include="_bin_deployableAssemblies\x86\Microsoft.VC90.CRT\msvcr90.dll" />
+    <None Include="_bin_deployableAssemblies\amd64\sqlcese40.dll" />
+    <None Include="_bin_deployableAssemblies\amd64\sqlceqp40.dll" />
+    <None Include="_bin_deployableAssemblies\amd64\sqlceme40.dll" />
+    <None Include="_bin_deployableAssemblies\amd64\sqlceer40EN.dll" />
+    <None Include="_bin_deployableAssemblies\amd64\sqlcecompact40.dll" />
+    <None Include="_bin_deployableAssemblies\amd64\sqlceca40.dll" />
+    <None Include="_bin_deployableAssemblies\amd64\Microsoft.VC90.CRT\README_ENU.txt" />
+    <None Include="_bin_deployableAssemblies\amd64\Microsoft.VC90.CRT\msvcr90.dll" />
     <EntityDeploy Include="Models\EF_connection.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>EF_connection.Designer.cs</LastGenOutput>
@@ -135,14 +172,23 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <None Include="_bin_deployableAssemblies\amd64\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest" />
+    <None Include="_bin_deployableAssemblies\x86\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="Pages\Registration.aspx" />
     <Content Include="Pages\SingIn.aspx" />
     <Content Include="Pages\Tags.aspx" />
+<<<<<<< HEAD
     <Content Include="Pages\Vocabulary.aspx" />
     <Content Include="Pages\WebForm1.aspx" />
+=======
+    <Content Include="Pages\Videos.aspx" />
+    <Content Include="Pages\Vocabulary.aspx" />
+    <Content Include="Pages\WebForm1.aspx" />
+    <Content Include="System.Data.SqlServerCe.dll" />
+>>>>>>> origin/Andrew
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -233,12 +279,28 @@
     <Compile Include="Pages\About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Pages\FirstTest11.aspx.cs">
       <DependentUpon>FirstTest11.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\FirstTest11.aspx.designer.cs">
       <DependentUpon>FirstTest11.aspx</DependentUpon>
+=======
+    <Compile Include="Pages\FirstTest.aspx.cs">
+      <DependentUpon>FirstTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\FirstTest.aspx.designer.cs">
+      <DependentUpon>FirstTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\FirstTest1.aspx.cs">
+      <DependentUpon>FirstTest1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\FirstTest1.aspx.designer.cs">
+      <DependentUpon>FirstTest1.aspx</DependentUpon>
+>>>>>>> origin/Andrew
     </Compile>
     <Compile Include="Pages\Grammar.aspx.cs">
       <DependentUpon>Grammar.aspx</DependentUpon>
@@ -293,12 +355,12 @@
     <Compile Include="Pages\AccountLogin.aspx.designer.cs">
       <DependentUpon>AccountLogin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\FirstTest.aspx.cs">
-      <DependentUpon>FirstTest.aspx</DependentUpon>
+    <Compile Include="Pages\Games.aspx.cs">
+      <DependentUpon>Games.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\FirstTest.aspx.designer.cs">
-      <DependentUpon>FirstTest.aspx</DependentUpon>
+    <Compile Include="Pages\Games.aspx.designer.cs">
+      <DependentUpon>Games.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Games.aspx.cs">
       <DependentUpon>Games.aspx</DependentUpon>
@@ -342,6 +404,16 @@
     <Compile Include="Pages\Tags.aspx.designer.cs">
       <DependentUpon>Tags.aspx</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+=======
+    <Compile Include="Pages\Videos.aspx.cs">
+      <DependentUpon>Videos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Videos.aspx.designer.cs">
+      <DependentUpon>Videos.aspx</DependentUpon>
+    </Compile>
+>>>>>>> origin/Andrew
     <Compile Include="Pages\Vocabulary.aspx.cs">
       <DependentUpon>Vocabulary.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -359,6 +431,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
+=======
+    <Folder Include="App_Data\" />
+>>>>>>> origin/Andrew
     <Folder Include="kuchmynda\StyleCSS\" />
     <Folder Include="Scripts\" />
   </ItemGroup>

@@ -23,7 +23,11 @@
            <br />
            <br />
            <a id="regLink" runat="server">Registration</a>
+<<<<<<< HEAD
         <a id="singInLink" runat="server">SingIn</a>
+=======
+        <a id="singInLink" runat="server">Sign In</a>
+>>>>>>> origin/Andrew
 </div>
     <div id="yesAutor" runat="server"><strong>User:&nbsp;&nbsp;&nbsp;
         <asp:Label ID="Label_User"  runat="server"></asp:Label>

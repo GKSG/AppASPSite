@@ -4,12 +4,21 @@ font: bold 1em "Arial Narrow", "Franklin Gothic Medium", Arial;
 }
 DIV#header {background-color: #df691a; border-bottom: 2px solid #111; color: White;padding-top: 20px;padding-bottom: 20px;}
 DIV#header DIV.title { font-size: 50px; padding: .6em; }
+<<<<<<< HEAD
 DIV#content { border-left: 2px solid gray; margin-left: 9em; padding: 1em;
     height: 1333px;
     margin-right: 0px;
     width: 534px;
 }
 DIV#categories { float: left; width: 9em; 
+=======
+DIV#content {  margin-left: 9em; padding: 1em;
+
+    margin-right: 0px;
+    width: 700px;
+}
+DIV#categories { float: left; width: 9em;margin: .10em;
+>>>>>>> origin/Andrew
 padding: .3em;
     height: 287px;
 }
@@ -70,11 +79,17 @@ DIV.pager A.selected { background-color: #353535; color: White; }
 DIV#categories A
 {
     font: bold 1.1em "Arial Narrow","Franklin Gothic Medium",Arial; display: block;
+<<<<<<< HEAD
     text-decoration: none; padding: .6em; color: White;
     border-bottom: 1px solid silver;
+=======
+    text-decoration: none; padding: .6em; color: #E6E6EB;
+    margin-left: 20px;
+
+>>>>>>> origin/Andrew
 }
-DIV#categories A.selected { background-color: #666; color: White; }
-DIV#categories A:hover { background-color: #CCC; }
+DIV#categories A.selected { background-color: #2980B9; color: #2980B9; }
+DIV#categories A:hover { background-color: #2980B9; }
 DIV#categories A.selected:hover { background-color: #666; }
 
 DIV.item BUTTON {

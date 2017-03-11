@@ -8,6 +8,10 @@ using System.Text;
 using System.Net;
 using EasyUKRaine.Models;
 using System.Web.Routing;
+<<<<<<< HEAD
+=======
+using EasyUKRaine.Models.Repository;
+>>>>>>> origin/Andrew
 
 namespace game
 {
@@ -20,6 +24,7 @@ namespace game
         public static List<string> symb = new List<string>();
         public static List<string> translate = new List<string>();
         public static List<string> english = new List<string>();
+<<<<<<< HEAD
         public static List<string> WordsDB = (new EasyUKRainianEntities()).Word.Select(x => x.Word1.Replace("\"","")).ToList();
         private static EasyUKRainianEntities repo = new EasyUKRainianEntities();
         public static List<Word> WordsDB1 = repo.Word.ToList();
@@ -29,13 +34,32 @@ namespace game
         protected void Page_Load(object sender, EventArgs e)
         {               
            
+=======
+        public static List<string> WordsDB = (new EasyUKRainianEntities()).Word.Select(x => x.Word1.Replace("\"","'")).ToList();
+        private static EasyUKRainianEntities repo = new EasyUKRainianEntities();
+        public static List<Word> WordsDB1 = repo.Word.ToList();
+        public static List<Translate> TranslDB = repo.Translate.ToList();
+        public static string[] k = new string[16];
+        public static List<KeyValuePair<string, string>> WordAndTranslate = new List<KeyValuePair<string, string>>();
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!Page.User.Identity.IsAuthenticated)
+            {
+                Response.Redirect(RouteTable.Routes.GetVirtualPath(null, "SingIn", null).VirtualPath);
+            }
+
+>>>>>>> origin/Andrew
             if (IsGeneration == true)
                 {
                 for (int i = 0; i < WordsDB1.Count; i++)
                     for (int j = 0; j < TranslDB.Count; j++)
                         if (WordsDB1[i].WID == TranslDB[j].WID)
                         {
+<<<<<<< HEAD
                             WordAndTranslate.Add(new KeyValuePair<string, string>(WordsDB1[i].Word1, TranslDB[j].Translate1));
+=======
+                            WordAndTranslate.Add(new KeyValuePair<string, string>(WordsDB1[i].Word1.Replace('\"','\''), TranslDB[j].Translate1));
+>>>>>>> origin/Andrew
                             continue;
                         }
                 
@@ -61,12 +85,17 @@ namespace game
                      }                                     
                     }              
                     Random rnd = new Random();
+<<<<<<< HEAD
                     string[] k = new string[16];
+=======
+                    
+>>>>>>> origin/Andrew
                     for (int i = 0; i < k.Length; i++)
                     {
                         k[i] = symb[rnd.Next(0, symb.Count)].ToString();
                         symb.Remove(k[i]);
                     }
+<<<<<<< HEAD
                     b1.Text = k[0].ToString();
                     b2.Text = k[1].ToString();
                     b3.Text = k[2].ToString();
@@ -84,6 +113,8 @@ namespace game
                     b15.Text = k[14].ToString();
                     b16.Text = k[15].ToString();
                     IsGeneration = false;
+=======
+>>>>>>> origin/Andrew
                 TableRow t1 = new TableRow();
                 TableCell tc1 = new TableCell();
                 tc1.Text = "Words";
@@ -98,12 +129,20 @@ namespace game
                 tr.Add(t1);
                 Table_res.Rows.Add(tr[0]);
                 for (int i = 1; i < translate.Count; i++)
+<<<<<<< HEAD
                 {                    
+=======
+                {
+>>>>>>> origin/Andrew
                     TableRow t11 = new TableRow();
                     TableCell tc11 = new TableCell();
                     tc11.BorderWidth = 2;
                     tc11.BorderColor = System.Drawing.Color.Black;
+<<<<<<< HEAD
                     tc11.Text = english[i-1];
+=======
+                    tc11.Text = english[i - 1];
+>>>>>>> origin/Andrew
                     TableCell tc21 = new TableCell();
                     tc21.Text = "";
                     tc21.BorderWidth = 2;
@@ -113,8 +152,36 @@ namespace game
                     tr.Add(t11);
                     Table_res.Rows.Add(tr[i]);
                 }
+<<<<<<< HEAD
             }          
         }
+=======
+            }
+                    b1.Text = k[0].ToString();
+                    b2.Text = k[1].ToString();
+                    b3.Text = k[2].ToString();
+                    b4.Text = k[3].ToString();
+                    b5.Text = k[4].ToString();
+                    b6.Text = k[5].ToString();
+                    b7.Text = k[6].ToString();
+                    b8.Text = k[7].ToString();
+                    b9.Text = k[8].ToString();
+                    b10.Text = k[9].ToString();
+                    b11.Text = k[10].ToString();
+                    b12.Text = k[11].ToString();
+                    b13.Text = k[12].ToString();
+                    b14.Text = k[13].ToString();
+                    b15.Text = k[14].ToString();
+                    b16.Text = k[15].ToString();
+            Table_res.Rows.Clear();
+            for (int i = 0; i < tr.Count; i++)
+            {
+               Table_res.Rows.Add(tr[i]);
+            }
+            IsGeneration = false;            
+        }
+
+>>>>>>> origin/Andrew
         //public static int timeLeft = 180;
         //protected void Timer1_Tick(object sender, EventArgs e)
         //{
@@ -143,17 +210,35 @@ namespace game
         //}
         protected void button_submit_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
+=======
+            Table_res.Rows.Clear();
+>>>>>>> origin/Andrew
             string find = Text1.Text;
             //string filePath = @"C:\Users\q\Desktop\uk_UA.dic";
             //string text = System.IO.File.ReadAllText(filePath);
             //var output = text.Split('/').Select(x=>x=x.Replace("\n","")).ToList();
             Table_res.Rows.Add(tr[0]);
+<<<<<<< HEAD
+=======
+            int notword = 0;
+>>>>>>> origin/Andrew
             for (int y = 0; y < translate.Count; y++)
             {                
                 if (translate[y] == find)
                 {
                     words[y] = translate[y];
+<<<<<<< HEAD
                 }                
+=======
+                    notword++;
+                }            
+            }
+            if (notword == 0)
+            {
+                string scrp = "alert('Have not this word!!! Немає цього слова!!!');";
+                ScriptManager.RegisterStartupScript(this, GetType(), "alert", scrp, true);
+>>>>>>> origin/Andrew
             }
             for (int i = 1; i < translate.Count; i++)
             {
@@ -179,15 +264,38 @@ namespace game
                 {
                     res += 1;
                 }
+<<<<<<< HEAD
                 if (res == translate.Count - 1)
                 {
                     //ClientScript.RegisterOnSubmitStatement(this.GetType(), "calling",
                     //$"<script type=\"text/javascript\">alert(\"Good job!!!\")</script>");
                     Response.Redirect(RouteTable.Routes.GetVirtualPath(null, "Games", null).VirtualPath);
+=======
+                if (res == translate.Count-1)
+                {
+                    IsGeneration = true;
+                    translate.Clear();
+                    english.Clear();
+                    WordAndTranslate.Clear();
+                    words.Clear();
+                    Table_res.Rows.Clear();
+                    tr.Clear();
+                    Repository.GetInstance().CurrentUser.Score += WordsDB1.Count*4;
+                    Repository.GetInstance().CurrentUser.Level = Repository.GetInstance().CurrentUser.Score /100;
+                    Repository.GetInstance().UpdateUserAccount(Repository.GetInstance().CurrentUser);
+                    //  ClientScript.RegisterStartupScript(this.GetType(), "calling", $"<script type=\"text/javascript\">alert(\"Good job!!!\")</script>");
+                    ClientScript.RegisterStartupScript(this.GetType(), "calling",
+                           $"<script type=\"text/javascript\">if(window.confirm(\"Чудово! Wery well, bro!\")) window.location.href=\"{RouteTable.Routes.GetVirtualPath(null, "Games", null).VirtualPath}\"</script>");
+                    string scrp= "if (window.confirm(\"Чудово! Wery well, bro!\")) window.location.href=\"Games\"";
+                   ////// string scrp = "alert('Good job!!! Хороша робота!!!');";
+                    ScriptManager.RegisterStartupScript(this, GetType(), "alert", scrp, true);
+                   // Response.Redirect(RouteTable.Routes.GetVirtualPath(null, "Games", null).VirtualPath);
+>>>>>>> origin/Andrew
                 }
             }
                
         }
+<<<<<<< HEAD
         protected void b1_Click(object sender, EventArgs e)
         {
                 Text1.Text += b1.Text;
@@ -196,6 +304,22 @@ namespace game
                 Table_res.Rows.Add(tr[i]);
             }
         }
+=======
+        protected string redirect()
+        {
+            Response.Redirect(RouteTable.Routes.GetVirtualPath(null, "Games", null).VirtualPath);
+            return "";
+        }
+        protected void b1_Click(object sender, EventArgs e)
+        {
+            Text1.Text += b1.Text;            
+            for (int i = 0; i < tr.Count; i++)
+            {
+                Table_res.Rows.Add(tr[i]);
+            }            
+        }
+
+>>>>>>> origin/Andrew
         protected void b2_Click(object sender, EventArgs e)
         {
             Text1.Text += b2.Text;

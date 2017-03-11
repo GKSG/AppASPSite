@@ -28,9 +28,9 @@ namespace EasyUKRaine.Models
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Topic> Topic { get; set; }
         public virtual DbSet<Translate> Translate { get; set; }
-        public virtual DbSet<UserAccount> UserAccount { get; set; }
         public virtual DbSet<UserHistory> UserHistory { get; set; }
         public virtual DbSet<UserInfo> UserInfo { get; set; }
         public virtual DbSet<Word> Word { get; set; }
+        public virtual DbSet<UserAccount> UserAccount { get; set; }
     }
 }

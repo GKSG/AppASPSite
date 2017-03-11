@@ -1,18 +1,30 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/MainWindow.Master" AutoEventWireup="true"  EnableEventValidation="false"  CodeBehind="Registration.aspx.cs" Inherits="EasyUKRaine.Pages.Registration" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="bodyContent" runat="server">
     
+<<<<<<< HEAD
 
 <div id="content" >
 
         
              <div class="col-xs-6" >
+=======
+            <div id="content" >
+
+        
+             <div class="col-xs-6" >
+
+>>>>>>> origin/Andrew
                     <h3>Register</h3>
                     <form class="form-horizontal" >
 
                         <fieldset>
                             <div class="control-group">
 
+<<<<<<< HEAD
                                 <label class="control-label" for="login">Login</label><br/><asp:Label ID="check_login" runat="server" Text="Label" ForeColor="Red" style="font-weight: 700"></asp:Label>
+=======
+                                <label class="control-label" for="login">Login</label><asp:Label ID="check_login" runat="server" Text="Label" ForeColor="Red" style="font-weight: 700"></asp:Label>
+>>>>>>> origin/Andrew
 &nbsp;<div class="controls">
                                     <input type="text" id="login" name="login" placeholder="" class="form-control input-lg" runat="server"/>
                                     <p class="help-block">Login can contain any letters or numbers, without spaces</p>
@@ -85,10 +97,17 @@
                         </fieldset>
 
                      </form>
+<<<<<<< HEAD
                 </div>
 
 			</div>
 
 		
+=======
+                 
+                 </div>
+                </div>
+
+>>>>>>> origin/Andrew
     
 </asp:Content>

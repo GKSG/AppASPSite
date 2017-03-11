@@ -22,5 +22,6 @@ namespace EasyUKRaine.Models
         public string Donut { get; set; }
         public Nullable<int> Level { get; set; }
         public Nullable<int> Score { get; set; }
+        public Nullable<bool> Check_FirstTest { get; set; }
     }
 }

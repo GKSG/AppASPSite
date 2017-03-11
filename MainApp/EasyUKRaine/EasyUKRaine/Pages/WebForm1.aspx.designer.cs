@@ -13,6 +13,27 @@ namespace game {
     public partial class WebForm1 {
         
         /// <summary>
+<<<<<<< HEAD
+=======
+        /// ScriptManager1 элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        
+        /// <summary>
+        /// UpdatePanel1 элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+        
+        /// <summary>
+>>>>>>> origin/Andrew
         /// buttons элемент управления.
         /// </summary>
         /// <remarks>
@@ -175,6 +196,18 @@ namespace game {
         protected global::System.Web.UI.WebControls.Button b16;
         
         /// <summary>
+<<<<<<< HEAD
+=======
+        /// UpdatePanel2 элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel2;
+        
+        /// <summary>
+>>>>>>> origin/Andrew
         /// tb элемент управления.
         /// </summary>
         /// <remarks>
@@ -193,6 +226,18 @@ namespace game {
         protected global::System.Web.UI.WebControls.Table Table_res;
         
         /// <summary>
+<<<<<<< HEAD
+=======
+        /// UpdatePanel3 элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel3;
+        
+        /// <summary>
+>>>>>>> origin/Andrew
         /// Text1 элемент управления.
         /// </summary>
         /// <remarks>

@@ -17,8 +17,18 @@ namespace EasyUKRaine.Pages
     {
         private List<FTquestion> list_inForm = new List<FTquestion>();
         private int pageSize = Repository.GetInstance().GetFTquestions.Count;
+<<<<<<< HEAD
         protected void Page_Load(object sender, EventArgs e)
         {
+=======
+        private bool checkPush = true;
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (Repository.GetInstance().CurrentUser == null || Repository.GetInstance().CurrentUser.Check_FirstTest == true)
+            {
+                Response.Redirect(RouteTable.Routes.GetVirtualPath(null, null).VirtualPath);
+            }
+>>>>>>> origin/Andrew
             if (IsPostBack)
             {
 
@@ -81,10 +91,23 @@ namespace EasyUKRaine.Pages
                         default:
                             break;
                     }
+<<<<<<< HEAD
 
                     Response.Redirect(
                         RouteTable.Routes.GetVirtualPath(null, null, new RouteValueDictionary() {{"page", ++i}})
                             .VirtualPath);
+=======
+                    switch (checkPush)
+                    {
+                        case true:
+                            Response.Redirect(RouteTable.Routes.GetVirtualPath(null, null, 
+                                new RouteValueDictionary() { { "page", ++i } }).VirtualPath); break;
+                        case false:
+                            Response.Redirect(RouteTable.Routes.GetVirtualPath(null, null,
+                        new RouteValueDictionary() { { "page", i } }).VirtualPath); break;
+                    }
+                    
+>>>>>>> origin/Andrew
                 }
 
                 string go_out = Request.Form["go_out"];
@@ -92,6 +115,10 @@ namespace EasyUKRaine.Pages
                 {
 
                     Repository.GetInstance().CurrentUser.Level = Repository.GetInstance().CurrentUser.Score / 100;
+<<<<<<< HEAD
+=======
+                    Repository.GetInstance().CurrentUser.Check_FirstTest = true;
+>>>>>>> origin/Andrew
                     Repository.GetInstance().UpdateUserAccount(Repository.GetInstance().CurrentUser);
 
 
@@ -115,9 +142,19 @@ namespace EasyUKRaine.Pages
                 if (answer == Repository.GetInstance().GetFTquestions[i].answer)
                 {
                     Repository.GetInstance().CurrentUser.Score += 100;
+<<<<<<< HEAD
                     
                 }
             }
+=======
+
+                }
+            }
+            else
+            {
+                checkPush = false;
+            }
+>>>>>>> origin/Andrew
         }
 
         public List<FTquestion> ShuflleTest()

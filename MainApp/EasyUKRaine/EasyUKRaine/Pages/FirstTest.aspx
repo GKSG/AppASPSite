@@ -5,7 +5,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="bodyContent" runat="server">
     
     
+<<<<<<< HEAD
     <div id="content">
+=======
+    <div >
+>>>>>>> origin/Andrew
 
                 <%
                     try
@@ -39,6 +43,10 @@
                     }
                     %>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/Andrew
     </div>
 
     <div class="pager">
